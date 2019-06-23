@@ -1,0 +1,463 @@
+.selectmass input {
+    float: right;
+    margin-left: 6px;
+}
+
+.mass_comments_action {
+    text-align: right;
+}
+
+/*---Календарь---*/
+.calendar {
+    width: 100%;
+}
+
+.calendar td, .calendar th {
+    padding: 5px 0;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.weekday-active-v, .day-active-v, .weekday-active, .day-active {
+    font-weight: bold;
+}
+
+.weekday {
+    color: #b270ce;
+}
+
+th.workday, th.weekday {
+    background-color: #f4f8fa;
+}
+
+.monthselect {
+    font-size: 1.15em;
+}
+
+.day-current {
+    background-color: #3f4b51;
+    color: #fff;
+}
+
+.day-current a {
+    color: #fff;
+}
+
+/*---Лучшие пользователи---*/
+.userstop td, .pm td.pm_list, .pm td.pm_head {
+    border: 1px solid rgb(70, 68, 68);
+    padding: 2px;
+}
+
+.userstop thead td, .pm td.pm_head {
+    font-weight: bold;
+    text-align: center;
+    background: rgb(29, 29, 29);
+}
+
+.editor textarea {
+    font-family: Verdana;
+    word-spacing: 0.1em;
+    letter-spacing: 0;
+    line-height: 1.5em;
+    font-size: 11px;
+    color:#000;
+    background: #fff url("../img/fields.png") repeat-x;
+    border: 0 none;
+}
+
+.editor input[type="text"] {
+    padding: 2px;
+    background: #fff url("../img/fields.png") repeat-x;
+    border: 1px solid #bcc0c2;
+}
+
+.editor_button {
+    float: left;
+    cursor: pointer;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.editor_buttoncl {
+    float: left;
+    cursor: pointer;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-left: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+}
+
+.editbclose {
+    float: right;
+    cursor: pointer;
+    display: none;
+}
+
+.editor_button select {
+    font-size: 9px;
+    margin-left: 2px;
+}
+
+.editor_button img {
+    margin: 0;
+    padding: 0;
+}
+
+.editbclose img {
+    margin: 0;
+    padding: 0;
+}
+
+.editor_button_brk img {
+    margin: 0;
+    padding: 0;
+}
+
+/*---Дополнительные поля---*/
+.xfields textarea, .xprofile textarea {
+    width: 98%;
+    height: 186px;
+    margin: 0px 1px 0px 0px;
+    padding: 0px;
+}
+
+.xfields input, .xprofile input {
+    width: 250px;
+    height: 14px;
+    padding: 2px;
+}
+
+.xfields_table td {
+    vertical-align: top;
+}
+
+/*---Персональные сообщения---*/
+.pm_head {
+    font-weight: bold;
+}
+
+/*---Выпадающее меню кнопки редактировать---*/
+#dropmenudiv {
+    border: 1px solid #E6E6D4;
+    background-color: #fff;
+    line-height: 20px;
+    margin: 2px 0;
+    padding: 5px;
+    background: #848480;
+    font-size:13px;
+}
+
+#dropmenudiv a {
+    display: block;
+    text-indent: 3px;
+    text-decoration: none;
+    padding: 1px 0;
+    width: 100%;
+    font-size:13px;
+}
+
+
+
+/*---Ссылка на скачивание прикрепленного файла---*/
+.attachment {
+    color: #808080;
+}
+
+/*---Рамка расширенной формы поиска по сайту---*/
+fieldset {
+    border: 1px solid #bfced6;
+    padding: 5px;
+    text-align: left;
+}
+
+/*---Диалоговые и всплывающие окна jQuery UI---*/
+.ui-helper-clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.ui-helper-clearfix {
+    display: inline-block;
+}
+
+* html .ui-helper-clearfix {
+    height: 1%;
+}
+
+.ui-helper-clearfix {
+    display: block;
+}
+
+.ui-icon {
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -99999px;
+}
+
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button, .ui-widget {
+    font-size: 11px;
+    background-color: white;
+}
+
+.ui-widget-content {
+    background-color: #646461;
+    border: 1px solid rgb(156, 156, 156);
+    color: #222;
+}
+
+.ui-widget-header {
+    color: #000;
+    font-weight: bold;
+    border-left: 1px solid #000;
+    background: #2b2b2b;
+}
+
+.ui-widget-header a {
+    color: #fff;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default {
+    border: 1px solid #cfcfcf;
+    color: #868686;
+}
+
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
+    color: #2e6e9e;
+    text-decoration: none;
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus {
+    border: 1px solid #a7a7a7;
+    color: #4e4e4e;
+}
+
+.ui-state-hover a, .ui-state-hover a:hover {
+    color: #1d5987;
+    text-decoration: none;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active {
+    background: #fff 50% 50% repeat-x;
+    border: 1px solid #a7a7a7;
+    color: #e17009;
+}
+
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
+    color: #e17009;
+    text-decoration: none;
+}
+
+.ui-state-error {
+    background: #fef1ec 50% 50% repeat-x;
+    border: 1px solid #dedede;
+    color: #cd0a0a;
+}
+
+.ui-icon-close {
+    background-position: -80px -128px;
+}
+
+.ui-icon-closethick {
+    background-position: -96px -128px;
+}
+
+.ui-button .ui-button-text {
+    display: block;
+}
+
+.ui-button-text-only .ui-button-text {
+    color: #000;
+    font-weight: bold;
+}
+
+input.ui-button {
+    padding: .4em 1em;
+}
+
+.ui-button-set {
+    margin-right: 7px;
+}
+
+.ui-button-set .ui-button {
+    margin-left: 0;
+    margin-right: -.3em;
+}
+
+button.ui-button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+.ui-dialog {
+    overflow: hidden;
+
+    position: absolute;
+    width: 300px;
+
+
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    padding: 8px 0 10px 22px;
+    position: relative;
+}
+
+.ui-dialog .ui-dialog-title {
+
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+    height: 18px;
+    margin: -11px 4px 0 0;
+    padding: 1px;
+    position: absolute;
+    right: .3em;
+    top: 50%;
+    width: 19px;
+}
+
+.ui-dialog .ui-dialog-titlebar-close span {
+    display: block;
+    margin: 1px;
+}
+
+.ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus {
+    padding: 0;
+}
+
+.ui-dialog .ui-dialog-content {
+
+    background: none;
+    border: 0;
+    overflow: hidden;
+    padding: 0 20px 20px 20px;
+    position: relative;
+    zoom: 1;
+
+}
+
+b.ui-dialog-content {color:rgb(241, 241, 241);}
+
+.ui-dialog .ui-dialog-buttonpane {
+    background-image: none;
+    border-width: 1px 0 0 0;
+    padding: 10px 2px 10px 25px;
+    text-align: left;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+    cursor: pointer;
+
+    margin: .5em .4em .5em 0;
+    overflow: visible;
+    padding: .2em .6em .3em .6em;
+    width: auto;
+}
+
+.ui-dialog .ui-resizable-se {
+    bottom: 3px;
+    height: 14px;
+    right: 3px;
+    width: 14px;
+}
+
+.ui-draggable .ui-dialog-titlebar {
+    cursor: move;
+}
+
+/* ==================== Автозаполнение облака тегов */
+.ui-autocomplete {
+    position: absolute;
+    cursor: default;
+}
+
+* html .ui-autocomplete {
+    width:1px;
+}
+
+/* without this, the menu expands to 100% in IE6 */
+.ui-menu {
+    list-style:none;
+    padding: 2px;
+    margin: 0;
+    display:block;
+    float: left;
+}
+
+.ui-menu .ui-menu {
+    margin-top: -3px;
+}
+
+.ui-menu .ui-menu-item {
+    margin:0;
+    padding: 0;
+    zoom: 1;
+    float: left;
+    clear: left;
+    width: 100%;
+}
+
+.ui-menu .ui-menu-item a {
+    text-decoration:none;
+    display:block;
+    padding:.2em .4em;
+    line-height:1.5;
+    zoom:1;
+}
+
+.ui-menu .ui-menu-item a.ui-state-hover,.ui-menu .ui-menu-item a.ui-state-active {
+    font-weight: normal;
+    margin: -1px;
+}
+
+/*---подсветка текста в теге [code]---*/
+pre code {
+    display: block;
+    padding: 0.5em;
+    background: #f9fafa;
+    border: 1px solid #dce7e7;
+    overflow:auto;
+    white-space: pre;
+}
+
+pre .comment,pre .template_comment,pre .diff .header,pre .doctype,pre .lisp .string,pre .javadoc {
+    color: #93a1a1;
+    font-style: italic;
+}
+
+pre .keyword,pre .css .rule .keyword,pre .winutils,pre .javascript .title,pre .method,pre .addition,pre .css .tag,pre .lisp .title {
+    color: #859900;
+}
+
+pre .number,pre .command,pre .string,pre .tag .value,pre .phpdoc,pre .tex .formula,pre .regexp,pre .hexcolor {
+    color: #2aa198;
+}
+
+pre .title,pre .localvars,pre .function .title,pre .chunk,pre .decorator,pre .builtin,pre .built_in,pre .lisp .title,pre .identifier,pre .title .keymethods,pre .id {
+    color: #268bd2;
+}
+
+pre .tag .title,pre .rules .property,pre .django .tag .keyword {
+    font-weight: bold;
+}
+
+pre .attribute,pre .variable,pre .instancevar,pre .lisp .body,pre .smalltalk .number,pre .constant,pre .class .title,pre .parent,pre .haskell .label {
+    color: #b58900;
+}
+
+pre .preprocessor,pre .pi,pre .shebang,pre .symbol,pre .diff .change,pre .special,pre .keymethods,pre .attr_selector,pre .important,pre .subst,pre .cdata {
+    color: #cb4b16;
+}
+
+pre .deletion {
+    color: #dc322f;
+}
+
+pre .tex .formula {
+    background: #eee8d5;
+}

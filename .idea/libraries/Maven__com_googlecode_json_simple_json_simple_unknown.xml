@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.googlecode.json-simple:json-simple:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/googlecode/json-simple/json-simple/unknown/json-simple-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/googlecode/json-simple/json-simple/unknown/json-simple-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/googlecode/json-simple/json-simple/unknown/json-simple-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

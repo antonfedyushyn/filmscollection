@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "directory.upload",
+      "type": "ua.com.google.fediushyn.anton.consts.UploadProperies",
+      "sourceType": "ua.com.google.fediushyn.anton.consts.UploadProperies"
+    }
+  ],
+  "properties": [
+    {
+      "name": "directory.upload.files",
+      "type": "java.lang.String",
+      "sourceType": "ua.com.google.fediushyn.anton.consts.UploadProperies"
+    },
+    {
+      "name": "directory.upload.images",
+      "type": "java.lang.String",
+      "sourceType": "ua.com.google.fediushyn.anton.consts.UploadProperies"
+    },
+    {
+      "name": "directory.upload.video",
+      "type": "java.lang.String",
+      "sourceType": "ua.com.google.fediushyn.anton.consts.UploadProperies"
+    }
+  ],
+  "hints": []
+}

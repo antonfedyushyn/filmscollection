@@ -7,9 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -35,7 +32,7 @@
                         <input name="titleonly" value="3" type="hidden">
                         <input type="hidden" name="do" value="search">
                         <input type="hidden" name="subaction" value="search">
-                        <input id="story" name="story" value="Поиск" onblur="if(this.value==&#39;&#39;) this.value=&#39;Поиск&#39;;" onfocus="if(this.value==&#39;Поиск&#39;) this.value=&#39;&#39;;" type="text">
+                        <input id="story" name="story" value="Поиск" onblur="if(this.value=='\'\'') this.value='\''+Поиск+'\'';" onfocus="if(this.value=='\''+Поиск+'\'') this.value='\'\'';" type="text">
                         <button class="fbutton2" onclick="submit();" type="submit" title="ok" style="float: right;"><span>ok</span></button>
                     </form>
                 </span>

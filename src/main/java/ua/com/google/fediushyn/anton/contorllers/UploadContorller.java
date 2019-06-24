@@ -70,12 +70,12 @@ public class UploadContorller {
 
         Boolean result = false;
         String resMessage = "";
-        List<String> fileName = null;
+        List<String> filesName = null;
 
 
         UploadFiles upload = new UploadFiles();
         try {
-            fileName = upload.uploadMultiImageFiles(file);
+            filesName = upload.uploadMultiImageFiles(file);
             result = true;
             resMessage = filmsController.getLocaleMessage("Success.uploadForm.files",
                     "Files uploaded successfully!");
@@ -89,6 +89,9 @@ public class UploadContorller {
             json.put("resMessage", resMessage);
             if (result) {
                 List<String> filePathes = new ArrayList<>();
+                for (String filePath: filesName) {
+                    filePathes.add("/imageFile?fileName="+filePath);
+                }
                 json.put("filesPathes", String.join(",", filePathes));
                 json.put("countFiles", file.length);
             }
@@ -155,24 +158,6 @@ public class UploadContorller {
             resMessage = e.getMessage();
         }
         return resMessage;
-    }
-
-    @PostMapping("/uploadImages")
-    public String uploadImageFiles(@RequestParam("file") MultipartFile file[],
-                                   Model model) {
-        Boolean result = false;
-        String resMessage = "";
-        try {
-            List<String> fileName = (new UploadFiles()).uploadMultiImageFiles(file);
-            result = true;
-            resMessage = filmsController.getLocaleMessage("Success.uploadForm.files",
-                    "Files uploaded successfully!");
-        } catch (UploadExceptions e) {
-            resMessage = filmsController.getLocaleMessage(e.getMessage(), e.getDefaultMessage(), e.getFileName());
-        }
-        model.addAttribute("result", result);
-        model.addAttribute("resultMessage", resMessage);
-        return filmsController.index(model);
     }
 
     @PostMapping("/uploadPoster")

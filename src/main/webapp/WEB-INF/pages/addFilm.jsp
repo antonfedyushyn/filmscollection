@@ -34,7 +34,7 @@
                                 <input name="titleonly" value="3" type="hidden">
                                 <input type="hidden" name="do" value="search">
                                 <input type="hidden" name="subaction" value="search">
-                                <input id="story" name="story" value="Поиск" onblur="if(this.value==&#39;&#39;) this.value=&#39;Поиск&#39;;" onfocus="if(this.value==&#39;Поиск&#39;) this.value=&#39;&#39;;" type="text">
+                                <input id="story" name="story" value="Поиск" onblur="if(this.value=='\'\'') this.value='\''+Поиск+'\'';" onfocus="if(this.value=='\''+Поиск+'\'') this.value='\'\'';" type="text">
                                 <button class="fbutton2" onclick="submit();" type="submit" title="ok" style="float: right;"><span>ok</span></button>
                             </form>
                         </span>
@@ -105,6 +105,7 @@
                                     <input type="text" name="posterFilePathShow" id='posterFilePathShow' value="resources/img/no-image-icon-10.png" disabled/>
                                     <input type="hidden" name="posterFilePath" id='posterFilePath' value="resources/img/no-image-icon-10.png"/>
                                     <input type="hidden" name="posterFileName" id="posterFileName" value=""/>
+                                    <input type="text" name="screenShoots" id="screenShoots" value=""/>
                                 </td>
                             </tr>
                             <tr>
@@ -369,7 +370,7 @@
     function uploadImageFiles(filesData) {
         var data = new FormData();
         for (var i = 0; i < filesData.length; i++) {
-            alert(filesData[i].name);
+            data.append("imageFiles", filesData[i]);
         }
         if ((!(filesData === undefined)) && (filesData.length > 0)) {
             $.ajax({
@@ -383,7 +384,9 @@
                 success: function (responseData) {
                     var res = JSON.parse(responseData);
                     if (res.result) {
-
+                        alert(responseData);
+                        alert(res.filesPathes);
+                        $("#screenShoots").val(res.filesPathes);
                     } else {
                         alert(res.resMessage);
                     }

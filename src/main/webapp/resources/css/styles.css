@@ -203,7 +203,17 @@ table.menu tr td a:hover {
     position: relative;
     border-left: 1px solid #404040;}
 .fullstorytitle{padding: 16px 20px 8px 20px; background: #2b2b2b;color:#fff;position: relative;border-top: 1px solid #404040;border-left: 1px solid #404040; height:20px;}
-.fullstory {width: 600px;float: left;padding: 5px 20px 10px 20px;background: #2b2b2b;clear: both;color:#fff;position: relative;border-left: 1px solid #404040; border-bottom: 1px solid rgb(17, 17, 17);}
+.fullstory {
+    width: 600px;
+    float: left;
+    padding: 5px 20px 10px 20px;
+    background: #2b2b2b;
+    clear: both;
+    color:#fff;
+    position: relative;
+    border-left: 1px solid #404040;
+    border-bottom: 1px solid rgb(17, 17, 17);
+}
 .miniblock { }
 
 
@@ -280,7 +290,7 @@ table.menu tr td a:hover {
 
 .loginin a {}
 .loginin a:hover {}
-.topmenu {height:45px;  width:100%, }
+.topmenu {height:45px;  width:100%; }
 .deepnavigation {padding-left: 15px;padding-top: 144px;}
 .menume {padding-top:5px;}
 

@@ -19,7 +19,7 @@ public class FilmDetail {
     private String director;
     private String cast;
 
-    @Column(name = "images_url")
+    @Column(name = "images_url", length = 2000)
     private String imagesPath;
 
     @Column(name = "film_url")
@@ -36,13 +36,6 @@ public class FilmDetail {
         this.cast = cast;
         this.director = director;
         this.pathFilm = pathFilm;
-    }
-
-    public FilmDetail(String cast, String director, String pathFilm, String imagesPath) {
-        this.cast = cast;
-        this.director = director;
-        this.pathFilm = pathFilm;
-        this.imagesPath = imagesPath;
     }
 
     public long getId() {
@@ -77,14 +70,6 @@ public class FilmDetail {
         this.film = film;
     }
 
-    public String getImagesPath() {
-        return imagesPath;
-    }
-
-    public void setImagesPath(String imagesPath) {
-        this.imagesPath = imagesPath;
-    }
-
     public String getPathFilm() {
         return pathFilm;
     }
@@ -95,11 +80,11 @@ public class FilmDetail {
 
     public List<String> getImagesPathes(){
       String imgsPath = imagesPath;
+      ArrayList<String> pathes = new ArrayList<>();
       if (imgsPath.length() > 0) {
-          ArrayList<String> pathes = new ArrayList<>(Arrays.asList(imgsPath.split(",")));
-          return pathes;
+          pathes = new ArrayList<>(Arrays.asList(imgsPath.split(",")));
       }
-      return new ArrayList<>();
+      return pathes;
     }
 
     public void setImagesPathes(List<String> imagesPathes){

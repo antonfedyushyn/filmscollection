@@ -83,6 +83,7 @@ public class AdminController {
                           @RequestParam(name = "posterFilePath") String posterFilePath,
                           @RequestParam(name = "posterFileName") String posterFileName,
                           @RequestParam(name = "filmTranslation", required = false, defaultValue = "UNKNOWN") String filmTranslation,
+                          @RequestParam(name = "screenShoots", required = false, defaultValue = "") String filmScreenShoots,
                           Model model) {
         FilmYear filmYearAdd = filmYearService.getFilmYear(filmYear);
         FilmCountry filmCountryAdd = filmCountryService.getFilmCountryByCode(filmCountry);
@@ -96,6 +97,8 @@ public class AdminController {
         filmDetail.setCast(filmDatailCast);
         filmDetail.setDirector(filmDatailDirector);
         filmDetail.setPathFilm(filmPath);
+        List<String> imagePathes = new ArrayList<String>(Arrays.asList(filmScreenShoots.split(",")));
+        filmDetail.setImagesPathes(imagePathes);
         try {
             filmService.addFilm(filmName, filmYearAdd, filmCountryAdd, filmNotes, FilmQualities.toEnum(filmQuality), filmDuration, FilmTranslation.toEnum(filmTranslation), new Date(), posterFilePath, posterFileName, filmGenresAdd, filmDetail);
 

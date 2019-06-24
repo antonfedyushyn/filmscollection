@@ -1,3 +1,4 @@
+<%--suppress ALL --%>
 <%--
   Created by IntelliJ IDEA.
   User: Anton
@@ -5,7 +6,7 @@
   Time: 19:04
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,11 +30,11 @@
             </div>
             <div class="search_panel">
                 <span class="searchbar">
-                    <form action="" name="searchform" method="post">
+                    <form action="/find" name="searchform" method="post">
                         <input name="titleonly" value="3" type="hidden">
                         <input type="hidden" name="do" value="search">
                         <input type="hidden" name="subaction" value="search">
-                        <input id="story" name="story" value="Поиск" onblur="if(this.value=='\'\'') this.value='\''+Поиск+'\'';" onfocus="if(this.value=='\''+Поиск+'\'') this.value='\'\'';" type="text">
+                        <input id="story" name="findText" value="Поиск" onblur="if(this.value=='') this.value='Поиск';" onfocus="if(this.value=='Поиск') this.value='';" type="text">
                         <button class="fbutton2" onclick="submit();" type="submit" title="ok" style="float: right;"><span>ok</span></button>
                     </form>
                 </span>
@@ -116,10 +117,10 @@
                     <div class="miniblock">
                         <div class="mini" style="border-top:0px; padding-top:0px;">
                             <div class="film_category">
-                                <a href="/addGenre" />Добавить новый жанр</a><br>
-                                <a href="/addYear" />Добавить новый год</a><br>
-                                <a href="/addCountry" />Добавить новую страну</a><br>
-                                <a href="/addFilm" />Добавить новый фильм</a><br>
+                                <a href="/addGenre" >Добавить новый жанр</a><br>
+                                <a href="/addYear" >Добавить новый год</a><br>
+                                <a href="/addCountry" >Добавить новую страну</a><br>
+                                <a href="/addFilm" >Добавить новый фильм</a><br>
                             </div>
                         </div>
                         <div style="padding-top:20px;"></div><!--div-->

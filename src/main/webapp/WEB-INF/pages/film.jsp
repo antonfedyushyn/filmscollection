@@ -1,3 +1,4 @@
+<%--suppress ALL --%>
 <%--
   Created by IntelliJ IDEA.
   User: Anton
@@ -24,14 +25,12 @@
         body {background: url(<c:url value="resources/img/IronMan3.jpg" />) 50% 0 no-repeat #000;}
     </style>
     <script type="text/javascript" src="resources/highslide/highslide-with-gallery.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
     <script src="resources/OwlCarousel2/assets/vendors/jquery.min.js"></script>
     <script src="resources/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
 </head>
 
 <body bgcolor='#ccc'>
-</script><script type="text/javascript">
-    <!--
+<script type="text/javascript">
     hs.graphicsDir = 'resources/highslide/graphics/';
     hs.outlineType = 'rounded-white';
     hs.wrapperClassName = 'dark';
@@ -64,8 +63,6 @@
             hideOnMouseOut: true
         }
     });
-
-    //-->
 </script>
 <div class="header_black"></div>
 <div class="wrapper">
@@ -76,11 +73,11 @@
             </div>
             <div class="search_panel">
                         <span class="searchbar">
-                            <form action="" name="searchform" method="post">
+                            <form action="/find" name="searchform" method="post">
                                 <input name="titleonly" value="3" type="hidden">
                                 <input type="hidden" name="do" value="search">
                                 <input type="hidden" name="subaction" value="search">
-                                <input id="story" name="story" value="Поиск" onblur="if(this.value=='\'\'') this.value='\''+Поиск+'\'';" onfocus="if(this.value=='\''+Поиск+'\'') this.value='\'\'';" type="text">
+                                <input id="story" name="findText" value="Поиск" onblur="if(this.value=='') this.value='Поиск';" onfocus="if(this.value=='Поиск') this.value='';" type="text">
                                 <button class="fbutton2" onclick="submit();" type="submit" title="ok" style="float: right;"><span>ok</span></button>
                             </form>
                         </span>

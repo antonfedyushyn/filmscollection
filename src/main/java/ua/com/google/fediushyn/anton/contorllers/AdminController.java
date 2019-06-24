@@ -16,22 +16,29 @@ import java.util.*;
 
 @Controller
 public class AdminController {
-    @Autowired
-    private UserService userService;
-    @Autowired
     private FilmYearService filmYearService;
-    @Autowired
     private FilmCountryService filmCountryService;
-    @Autowired
     private FilmGenreService filmGenreService;
-    @Autowired
     private FilmService filmService;
 
-    @Autowired
     private MessageSource messageSource;
 
-    @Autowired
     private FilmsController filmsController;
+
+    @Autowired
+    AdminController(FilmYearService filmYearService,
+                    FilmCountryService filmCountryService,
+                    FilmGenreService filmGenreService,
+                    FilmService filmService,
+                    MessageSource messageSource,
+                    FilmsController filmsController){
+        this.filmYearService = filmYearService;
+        this.filmCountryService = filmCountryService;
+        this.filmGenreService = filmGenreService;
+        this.filmService = filmService;
+        this.messageSource = messageSource;
+        this.filmsController = filmsController;
+    }
 
     final private String[] params = {};
 
@@ -87,7 +94,7 @@ public class AdminController {
                           Model model) {
         FilmYear filmYearAdd = filmYearService.getFilmYear(filmYear);
         FilmCountry filmCountryAdd = filmCountryService.getFilmCountryByCode(filmCountry);
-        List<FilmGenre> filmGenresAdd = new ArrayList<FilmGenre>();
+        List<FilmGenre> filmGenresAdd = new ArrayList<>();
         for (String i: filmGenres) {
             if (filmGenreService.existsFilmGenreByCode(i)) {
                 filmGenresAdd.add(filmGenreService.getFilmGenreByCode(i));
@@ -97,20 +104,34 @@ public class AdminController {
         filmDetail.setCast(filmDatailCast);
         filmDetail.setDirector(filmDatailDirector);
         filmDetail.setPathFilm(filmPath);
-        List<String> imagePathes = new ArrayList<String>(Arrays.asList(filmScreenShoots.split(",")));
+        List<String> imagePathes = new ArrayList<>(Arrays.asList(filmScreenShoots.split(",")));
         filmDetail.setImagesPathes(imagePathes);
+        String resMessage = "";
         try {
             filmService.addFilm(filmName, filmYearAdd, filmCountryAdd, filmNotes, FilmQualities.toEnum(filmQuality), filmDuration, FilmTranslation.toEnum(filmTranslation), new Date(), posterFilePath, posterFileName, filmGenresAdd, filmDetail);
 
             filmsController.index(model);
-            model.addAttribute("result", true);
-            return "addFilm";
+            filmsController.setResultMessage(true, resMessage, model);
+            return "redirect:/addFilm";
         } catch (FilmException e) {
             filmsController.setContext(model);
-            model.addAttribute("result", false);
-            String resMessage = LocaleMessages.getLocaleMessage(messageSource, params, e.getMessage(), e.getMessageDefault(),
+            resMessage = LocaleMessages.getLocaleMessage(messageSource, params, e.getMessage(), e.getMessageDefault(),
                     e.getValue());
-            model.addAttribute("resultMessage", resMessage);
+            filmsController.setResultMessage(false, resMessage, model);
+            model.addAttribute("filmName", filmName);
+            model.addAttribute("filmPath", filmPath);
+            model.addAttribute("filmYear", filmYear);
+            model.addAttribute("filmCountry", filmCountry);
+            model.addAttribute("filmGenres[]", filmGenres);
+            model.addAttribute("filmQuality", filmQuality);
+            model.addAttribute("filmDuration", filmDuration);
+            model.addAttribute("filmNotes", filmNotes);
+            model.addAttribute("filmDatailDirector", filmDatailDirector);
+            model.addAttribute("filmDatailCast", filmDatailCast);
+            model.addAttribute("posterFilePath", posterFilePath);
+            model.addAttribute("posterFileName", posterFileName);
+            model.addAttribute("filmTranslation", filmTranslation);
+            model.addAttribute("screenShoots", filmScreenShoots);
             return "addFilm";
         }
     }
@@ -123,17 +144,18 @@ public class AdminController {
     @PostMapping(value = "/addYear")
     public String setYearFilm(@RequestParam(name = "filmYear") String filmYear,
                               Model model) {
+        String resMessage = "";
         try{
             filmYearService.addFilmYear(filmYear);
             filmsController.setContext(model);
-            model.addAttribute("result", true);
-            return "addYear";
+            filmsController.setResultMessage(true, resMessage, model);
+            return "redirect:/addYear";
         } catch (FilmException e) {
             filmsController.setContext(model);
-            model.addAttribute("result", false);
-            String resMessage = LocaleMessages.getLocaleMessage(messageSource, params, e.getMessage(), e.getMessageDefault(),
+            resMessage = LocaleMessages.getLocaleMessage(messageSource, params, e.getMessage(), e.getMessageDefault(),
                     e.getValue());
-            model.addAttribute("resultMessage", resMessage);
+            filmsController.setResultMessage(false, resMessage, model);
+            model.addAttribute("filmYear", filmYear);
             return "addYear";
         }
     }
@@ -147,17 +169,19 @@ public class AdminController {
     public String setGenreFilm(@RequestParam(name = "genreName") String genreName,
                                @RequestParam(name = "genreCode") String genreCode,
                                Model model) {
+        String resMessage = "";
         try{
             filmGenreService.addFilmGenre(genreName, genreCode);
             filmsController.setContext(model);
-            model.addAttribute("result", true);
-            return "addGenre";
+            filmsController.setResultMessage(true, resMessage, model);
+            return "redirect:/addGenre";
         } catch (FilmException e) {
             filmsController.setContext(model);
-            model.addAttribute("result", false);
-            String resMessage = LocaleMessages.getLocaleMessage(messageSource, params, e.getMessage(), e.getMessageDefault(),
+            resMessage = LocaleMessages.getLocaleMessage(messageSource, params, e.getMessage(), e.getMessageDefault(),
                     e.getValue());
-            model.addAttribute("resultMessage", resMessage);
+            filmsController.setResultMessage(false, resMessage, model);
+            model.addAttribute("genreName", genreName);
+            model.addAttribute("genreCode", genreCode);
             return "addGenre";
         }
     }
@@ -171,17 +195,19 @@ public class AdminController {
     public String setCountryFilm(@RequestParam(name = "countryName") String countryName,
                                  @RequestParam(name = "countryCode") String countryCode,
                                  Model model) {
+        String resMessage = "";
         try {
             filmCountryService.addFilmCountry(countryName, countryCode);
             filmsController.setContext(model);
-            model.addAttribute("result", true);
-            return "addCountry";
+            filmsController.setResultMessage(true, resMessage, model);
+            return "redirect:/addCountry";
         } catch (FilmException e) {
             filmsController.setContext(model);
-            model.addAttribute("result", false);
-            String resMessage = LocaleMessages.getLocaleMessage(messageSource, params, e.getMessage(), e.getMessageDefault(),
+            resMessage = LocaleMessages.getLocaleMessage(messageSource, params, e.getMessage(), e.getMessageDefault(),
                     e.getValue());
-            model.addAttribute("resultMessage", resMessage);
+            filmsController.setResultMessage(false, resMessage, model);
+            model.addAttribute("countryName", countryName);
+            model.addAttribute("countryCode", countryCode);
             return "addCountry";
         }
     }

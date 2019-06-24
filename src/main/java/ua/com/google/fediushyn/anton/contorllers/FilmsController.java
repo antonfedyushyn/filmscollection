@@ -24,34 +24,43 @@ import java.util.Locale;
 
 @Controller
 public class FilmsController {
-    @Autowired
     private UserService userService;
-    @Autowired
     private FilmYearService filmYearService;
-    @Autowired
     private FilmCountryService filmCountryService;
-    @Autowired
     private FilmGenreService filmGenreService;
-    @Autowired
     private FilmService filmService;
-    @Autowired
-    private FilmCommentService filmCommentService;
 
-    @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Autowired
     private SecurityServiceImpl securityService;
 
-    @Autowired
     private MessageSource messageSource;
+
+    @Autowired
+    FilmsController(UserService userService,
+                    FilmYearService filmYearService,
+                    FilmCountryService filmCountryService,
+                    FilmGenreService filmGenreService,
+                    FilmService filmService,
+                    PasswordEncoder passwordEncoder,
+                    SecurityServiceImpl securityService,
+                    MessageSource messageSource){
+        this.userService = userService;
+        this.filmYearService = filmYearService;
+        this.filmCountryService = filmCountryService;
+        this.filmGenreService = filmGenreService;
+        this.filmService = filmService;
+        this.passwordEncoder = passwordEncoder;
+        this.securityService = securityService;
+        this.messageSource = messageSource;
+    }
 
     final private String[] params = {};
 
     private final static int pageSize = 10;
 
-    public String getLocaleMessage(String message, String messageDefault){
-        String returnMessage = "";
+    String getLocaleMessage(String message, String messageDefault){
+        String returnMessage;
         try {
             Locale loc = LocaleContextHolder.getLocale();
             returnMessage = messageSource.getMessage(message, params, loc);
@@ -61,8 +70,8 @@ public class FilmsController {
         return returnMessage;
     }
 
-    public String getLocaleMessage(String message, String messageDefault, String fileName){
-        String returnMessage = "";
+    String getLocaleMessage(String message, String messageDefault, String fileName){
+        String returnMessage;
         try {
             Locale loc = LocaleContextHolder.getLocale();
             returnMessage = messageSource.getMessage(message, params, loc);
@@ -75,7 +84,7 @@ public class FilmsController {
         return returnMessage;
     }
 
-    public void setUserData(Model model) {
+    private void setUserData(Model model) {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof User) {
             User user = (User) principal;
@@ -93,23 +102,23 @@ public class FilmsController {
         }
     }
 
-    public void setFilmYears(Model model) {
+    private void setFilmYears(Model model) {
         List<FilmYear> filmYears = filmYearService.getFilmYears();
         model.addAttribute("years", filmYears);
     }
 
-    public void setFilmCountries(Model model){
+    private void setFilmCountries(Model model){
         List<FilmCountry> filmCountries= filmCountryService.getFilmCounrties();
         model.addAttribute("countries", filmCountries);
     }
 
-    public void setFilmGenres(Model model) {
+    private void setFilmGenres(Model model) {
         List<FilmGenre> filmGenres = filmGenreService.getFilmGenres();
         model.addAttribute("genres", filmGenres);
         model.addAttribute("genres_count", filmGenres.size());
     }
 
-    public void setFilms(int page, String url, Page<Film> films, Model model, Boolean isFirstParam) {
+    private void setFilms(int page, String url, Page<Film> films, Model model, Boolean isFirstParam) {
         model.addAttribute("films", films.getContent());
         model.addAttribute("filmsPages", FilmPage.generatePagesList(films.getTotalPages(), page, url, isFirstParam));
         model.addAttribute("filmPageNo", page);
@@ -117,7 +126,7 @@ public class FilmsController {
 
     }
 
-    public void setFilms(int page, Model model){
+    private void setFilms(int page, Model model){
         Pageable pageFilms = PageRequest.of(page, pageSize);
         Page<Film> films = filmService.getAllFilms(pageFilms);
         setFilms(page, "/index", films, model, true);
@@ -130,14 +139,14 @@ public class FilmsController {
         setResultMessage(result, resMessage, model);
     }
 
-    public void setContext(Model model){
+    protected void setContext(Model model){
         setUserData(model);
         setFilmYears(model);
         setFilmCountries(model);
         setFilmGenres(model);
     }
 
-    public void setResultMessage(Boolean result, String resMessage, Model model){
+    void setResultMessage(Boolean result, String resMessage, Model model){
         model.addAttribute("result", result);
         model.addAttribute("resMessage", resMessage);
     }
@@ -205,7 +214,7 @@ public class FilmsController {
     @GetMapping("/user/{login}")
     public String user(@PathVariable(value = "login") String userLogin){
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String url = "redirect:/";
+        String url;
         if (principal instanceof User) {
             User user = (User) principal;
             String login = user.getUsername();
@@ -225,7 +234,7 @@ public class FilmsController {
                 url = "redirect:/";
             }
         } else {
-            url = "redirect: /";
+            url = "redirect:/";
         }
         return url;
     }
@@ -238,7 +247,7 @@ public class FilmsController {
 
 
 
-    @RequestMapping(value = "/film", method = RequestMethod.GET)
+    @GetMapping(value = "/film")
     public String getFilm(@RequestParam(name = "code") String code,
                           Model model) {
         setContext(model);
@@ -255,7 +264,7 @@ public class FilmsController {
         return "film";
     }
 
-    @RequestMapping(value = "/genre", method = RequestMethod.GET)
+    @GetMapping(value = "/genre")
     public String getFilmsByGenre(@RequestParam(name = "code") String code,
                                   @RequestParam(required = false, name = "page", defaultValue = "0") int page,
                                   Model model) {
@@ -274,7 +283,7 @@ public class FilmsController {
         return "index";
     }
 
-    @RequestMapping(value = "/country", method = RequestMethod.GET)
+    @GetMapping(value = "/country")
     public String getFilmsByCountry(@RequestParam(name = "code") String code,
                                     @RequestParam(required = false, name = "page", defaultValue = "0") int page,
                                     Model model) {
@@ -293,7 +302,7 @@ public class FilmsController {
         return "index";
     }
 
-    @RequestMapping(value = "/year", method = RequestMethod.GET)
+    @GetMapping(value = "/year")
     public String getFilmsByYear(@RequestParam(name = "code") String code,
                                  @RequestParam(required = false, name = "page", defaultValue = "0") int page,
                                  Model model) {
@@ -312,7 +321,7 @@ public class FilmsController {
         return "index";
     }
 
-    @RequestMapping(value = "/find", method = RequestMethod.POST)
+    @PostMapping(value = "/find")
     public String getFilmsByNameOrNotes(@RequestParam(name = "findText") String findText,
                                         Model model) {
         Pageable pageFilms = PageRequest.of(0, pageSize);
@@ -323,13 +332,14 @@ public class FilmsController {
         String resMessage = "";
         if (films.getTotalElements() == 0) {
             result = false;
-            resMessage = getLocaleMessage("Film.not.found", "Movie not found!");
+            resMessage = getLocaleMessage("Films.by.name.not.found", "Sorry, searching for the phrase \"%s\" yielded no results!",
+                    findText);
         }
         setResultMessage(result, resMessage, model);
         return "index";
     }
 
-    @RequestMapping(value = "/find", method = RequestMethod.GET)
+    @GetMapping(value = "/find")
     public String getFilmsByNameOrNotes(@RequestParam(name = "findText") String findText,
                                         @RequestParam(required = false, name = "page", defaultValue = "0") int page,
                                         Model model) {

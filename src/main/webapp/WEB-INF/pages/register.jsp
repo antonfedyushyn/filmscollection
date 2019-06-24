@@ -1,3 +1,4 @@
+<%--suppress ALL --%>
 <%@ page contentType="text/html;charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -24,11 +25,11 @@
                     </div>
                     <div class="search_panel">
                         <span class="searchbar">
-                            <form action="" name="searchform" method="post">
+                            <form action="/find" name="searchform" method="post">
                                 <input name="titleonly" value="3" type="hidden">
                                 <input type="hidden" name="do" value="search">
                                 <input type="hidden" name="subaction" value="search">
-                                <input id="story" name="story" value="Поиск" onblur="if(this.value=='\'\'') this.value='\''+Поиск+'\'';" onfocus="if(this.value=='\''+Поиск+'\'') this.value='\'\'';" type="text">
+                                <input id="story" name="findText" value="Поиск" onblur="if(this.value=='') this.value='Поиск';" onfocus="if(this.value=='Поиск') this.value='';" type="text">
                                 <button class="fbutton2" onclick="submit();" type="submit" title="ok" style="float: right;"><span>ok</span></button>
                             </form>
                         </span>

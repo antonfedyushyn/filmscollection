@@ -26,18 +26,22 @@ import java.util.List;
 
 @Controller
 public class UploadContorller {
-    @Autowired
     private FilmsController filmsController;
+    private ConfigProperties configProp;
 
     @Autowired
-    private ConfigProperties configProp;
+    UploadContorller(FilmsController filmsController,
+                     ConfigProperties configProp){
+        this.filmsController = filmsController;
+        this.configProp = configProp;
+    }
 
     @PostMapping("/uploadPosterFile")
     @ResponseBody
     public String uploadPosterFile(@RequestParam("posterFile") MultipartFile file) {
 
         Boolean result = false;
-        String resMessage = "";
+        String resMessage;
         String fileName = "";
 
 
@@ -69,7 +73,7 @@ public class UploadContorller {
     public String uploadImageFiles(@RequestParam("imageFiles") MultipartFile[] file) {
 
         Boolean result = false;
-        String resMessage = "";
+        String resMessage;
         List<String> filesName = null;
 
 
@@ -107,7 +111,7 @@ public class UploadContorller {
     public String uploadVideoFile(@RequestParam("videoFile") MultipartFile file) {
 
         Boolean result = false;
-        String resMessage = "";
+        String resMessage;
         String fileName = "";
 
         UploadFiles upload = new UploadFiles();
@@ -137,7 +141,7 @@ public class UploadContorller {
     @ResponseBody
     public String uploadImageFile(@RequestParam("file") MultipartFile file) {
         Boolean result = false;
-        String resMessage = "";
+        String resMessage;
         String fileName = "";
         UploadFiles upload = new UploadFiles();
         try {
@@ -163,7 +167,7 @@ public class UploadContorller {
     @PostMapping("/uploadPoster")
     public String uploadPosterImage(@RequestParam("file") MultipartFile file) {
         Boolean result = false;
-        String resMessage = "";
+        String resMessage;
         try {
             String fileName = (new UploadFiles()).uploadSingleImageFile(file, true);
             result = true;
@@ -192,7 +196,7 @@ public class UploadContorller {
         } catch (UploadExceptions e){
             status = HttpStatus.INTERNAL_SERVER_ERROR;
         }
-        String ext = "";
+        String ext;
         File f = new File(configProp.getConfigValue("directory.upload.files") + File.separator + configProp.getConfigValue("directory.upload.images") + File.separator + fileName);
         try {
             ext = Files.probeContentType(f.toPath());
@@ -210,7 +214,7 @@ public class UploadContorller {
         if (ext.contains("png")) {
             headers.setContentType( MediaType.IMAGE_PNG);
         }
-        return new ResponseEntity<byte[]>(imageContext, headers, status);
+        return new ResponseEntity<>(imageContext, headers, status);
     }
 
     @GetMapping(value = "/videoFile")
@@ -225,14 +229,20 @@ public class UploadContorller {
         File f = new File(configProp.getConfigValue("directory.upload.files") + File.separator + configProp.getConfigValue("directory.upload.images") + File.separator + fileName);
 
         HttpHeaders headers = new HttpHeaders();
+        long videoContentLength;
+        if (videoContext == null) {
+            videoContentLength = 0;
+        } else {
+            videoContentLength = videoContext.length;
+        }
         headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
-        headers.setContentLength(videoContext.length);
-        return new ResponseEntity<byte[]>(videoContext, headers, status);
+        headers.setContentLength(videoContentLength);
+        return new ResponseEntity<>(videoContext, headers, status);
     }
 
     @GetMapping(value = "/videosrc", produces = "video/mp4")
     @ResponseBody
-    public FileSystemResource videoSource(@RequestParam(value="fileName", required=true) String fileName) {
+    public FileSystemResource videoSource(@RequestParam(value="fileName") String fileName) {
         try {
             File video = (new UploadFiles()).getVideoFile(fileName);
             return new FileSystemResource(video);
@@ -243,17 +253,16 @@ public class UploadContorller {
 
     @PostMapping("/deleteFile")
     public String deleteFile(@RequestParam("fileName") String fileName){
-        Boolean result = false;
-        String resMessage = null;
+        String resMessage;
 
         UploadFiles.deleteImageFile(fileName);
 
         JSONObject json = new JSONObject();
         try{
-            json.put("result", result);
-            json.put("resMessage", resMessage);
+            json.put("result", true);
             resMessage = json.toString();
         } catch (JSONException e){
+            resMessage = "";
         }
         return resMessage;
     }

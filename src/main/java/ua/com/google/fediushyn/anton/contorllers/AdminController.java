@@ -16,14 +16,14 @@ import java.util.*;
 
 @Controller
 public class AdminController {
-    private FilmYearService filmYearService;
-    private FilmCountryService filmCountryService;
-    private FilmGenreService filmGenreService;
-    private FilmService filmService;
+    private final FilmYearService filmYearService;
+    private final FilmCountryService filmCountryService;
+    private final FilmGenreService filmGenreService;
+    private final FilmService filmService;
 
-    private MessageSource messageSource;
+    private final MessageSource messageSource;
 
-    private FilmsController filmsController;
+    private final FilmsController filmsController;
 
     @Autowired
     AdminController(FilmYearService filmYearService,

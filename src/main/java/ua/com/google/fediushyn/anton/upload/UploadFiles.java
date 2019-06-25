@@ -6,29 +6,27 @@ import ua.com.google.fediushyn.anton.props.ConfigProperties;
 
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.lang.Object;
 import java.util.UUID;
 
-public class UploadFiles {
-    public final static long maxImageFileSize = 100000000;
-    public final static String FMT_IMAGE_NAME = "image_%s.%s";
-    public final static String FMT_IMAGE_NAME_ARR = "image_%d_%s.%s";
-    public final static String FMT_POSTER_NAME = "poster_%s.%s";
+public class UploadFiles implements UploadFile {
+    private final static long maxImageFileSize = 100000000;
+    private final static String FMT_IMAGE_NAME = "image_%s.%s";
+    private final static String FMT_IMAGE_NAME_ARR = "image_%d_%s.%s";
+    private final static String FMT_POSTER_NAME = "poster_%s.%s";
 
     public String uploadSingleImageFile(MultipartFile file, Boolean isPoser) throws UploadExceptions {
-        String fileName = null;
+        String fileName;
         if (file.isEmpty()) {
             throw new UploadExceptions("Empty.uploadForm.file",
                     "Failed to upload empty file %s!", file.getOriginalFilename());
         }
 
         String contentType = file.getContentType();
-        if (contentType.indexOf("image") < 0) {
+        if ((contentType != null) && (!contentType.contains("image"))) {
             throw new UploadExceptions("NoImage.uploadForm.file",
                     "The file %s is not an image!!", file.getOriginalFilename());
         }
@@ -48,7 +46,9 @@ public class UploadFiles {
             File dir = new File(ConfigProperties.getPropertyValue("directory.upload.files") + File.separator + ConfigProperties.getPropertyValue("directory.upload.images"));
 
             if (!dir.exists()){
-                dir.mkdirs();
+                if (!dir.mkdirs()) {
+                    throw new UploadExceptions("Filed.create.directory", "Filed to create directory!");
+                }
             }
 
             File uploadedFile = new File(dir.getAbsolutePath() + File.separator + fileName);
@@ -81,13 +81,15 @@ public class UploadFiles {
                             "File %s size exceeds maximum size allowed!", file.getOriginalFilename());
                 }
 
-                String fileName = fileName = String.format(FMT_IMAGE_NAME_ARR, pos++, new SimpleDateFormat("yyyymmddhhmmss").format(new Date()),
+                String fileName = String.format(FMT_IMAGE_NAME_ARR, pos++, new SimpleDateFormat("yyyymmddhhmmss").format(new Date()),
                         FilenameUtils.getExtension(file.getOriginalFilename()));
 
                 File dir = new File(ConfigProperties.getPropertyValue("directory.upload.files") + File.separator + ConfigProperties.getPropertyValue("directory.upload.images"));
 
                 if (!dir.exists()) {
-                    dir.mkdirs();
+                    if (!dir.mkdirs()) {
+                        throw new UploadExceptions("Filed.create.directory", "Filed to create directory!");
+                    }
                 }
 
                 File uploadedFile = new File(dir.getAbsolutePath() + File.separator + fileName);
@@ -104,7 +106,7 @@ public class UploadFiles {
     }
 
     public String uploadVideoFile(MultipartFile file) throws UploadExceptions{
-        String fileName = null;
+        String fileName;
         try {
             if (file.isEmpty()) {
                 throw new UploadExceptions("Empty.uploadForm.file",
@@ -117,7 +119,9 @@ public class UploadFiles {
             File dir = new File(ConfigProperties.getPropertyValue("directory.upload.files") + File.separator + ConfigProperties.getPropertyValue("directory.upload.video"));
 
             if (!dir.exists()){
-                dir.mkdirs();
+                if (!dir.mkdirs()) {
+                    throw new UploadExceptions("Filed.create.directory", "Filed to create directory!");
+                }
             }
 
             File uploadedFile = new File(dir.getAbsolutePath() + File.separator + fileName);
@@ -133,7 +137,7 @@ public class UploadFiles {
     }
 
     public byte[] getImageFile(String fileName) throws UploadExceptions{
-        byte[] imageContext = null;
+        byte[] imageContext;
         File dir = new File(ConfigProperties.getPropertyValue("directory.upload.files") + File.separator + ConfigProperties.getPropertyValue("directory.upload.images"));
         if (!dir.exists()) {
             throw new UploadExceptions("Directory.images.not.exists", "Images directory not found!");
@@ -152,7 +156,7 @@ public class UploadFiles {
     }
 
     public File getVideoFile(String fileName) throws UploadExceptions{
-        File video = null;
+        File video;
         File dir = new File(ConfigProperties.getPropertyValue("directory.upload.files") + File.separator + ConfigProperties.getPropertyValue("directory.upload.video"));
         if (!dir.exists()) {
             throw new UploadExceptions("Directory.videos.not.exists", "Videos directory not found!");
@@ -165,7 +169,7 @@ public class UploadFiles {
     }
 
     public byte[] getVideoContext(String fileName) throws UploadExceptions{
-        byte[] videoContext = null;
+        byte[] videoContext;
         File dir = new File(ConfigProperties.getPropertyValue("directory.upload.files") + File.separator + ConfigProperties.getPropertyValue("directory.upload.video"));
         if (!dir.exists()) {
             throw new UploadExceptions("Directory.videos.not.exists", "Videos directory not found!");
@@ -195,7 +199,6 @@ public class UploadFiles {
         }
 
         deleteFile.delete();
-        return;
     }
 
     public static void deleteVideoFile(String fileName){
@@ -209,6 +212,5 @@ public class UploadFiles {
         }
 
         deleteFile.delete();
-        return;
     }
 }

@@ -1,11 +1,5 @@
 package ua.com.google.fediushyn.anton.exceptions;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
-import org.springframework.context.NoSuchMessageException;
-
-import java.util.Locale;
-
 public class FilmException extends Exception {
     private String message = "";
     private String messageDefault = "";

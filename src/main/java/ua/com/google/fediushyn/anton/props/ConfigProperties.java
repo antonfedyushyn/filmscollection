@@ -9,13 +9,13 @@ public class ConfigProperties {
     public static String getPropertyValue(String propertyKey, String defaultValue) {
         FileInputStream fis;
         Properties property = new Properties();
-        String value = "";
+        String value;
         try {
             fis = new FileInputStream("src/main/resources/config.properties");
             property.load(fis);
             value = property.getProperty(propertyKey, defaultValue);
         } catch (IOException e) {
-
+            value = "";
         }
         return value;
     }

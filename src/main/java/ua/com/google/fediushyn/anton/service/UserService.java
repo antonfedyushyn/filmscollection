@@ -12,8 +12,13 @@ import java.util.List;
 
 @Service
 public class UserService {
+
+    private final UserRepository userRepository;
+
     @Autowired
-    private UserRepository userRepository;
+    UserService(UserRepository userRepository){
+        this.userRepository = userRepository;
+    }
 
     @Transactional(readOnly = true)
     public CustomUser findByLogin(String login) {
@@ -36,8 +41,6 @@ public class UserService {
 
         CustomUser user = new CustomUser(login, passHash, role, name, email, phone);
         userRepository.save(user);
-
-        return;
     }
 
     @Transactional

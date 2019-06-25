@@ -16,9 +16,6 @@ public enum FilmQualities {
     VHSRIP ("VHSRip"),
     HDRIP ("HDRip");
 
-    FilmQualities() {
-    }
-
     FilmQualities(String title){
         this.title = title;
     }
@@ -33,7 +30,7 @@ public enum FilmQualities {
         return filmQualities;
     }
 
-    private String title;
+    private final String title;
 
     @Override
     public String toString(){

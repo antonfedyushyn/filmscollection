@@ -30,5 +30,5 @@ public interface FilmGenreRepository extends JpaRepository<FilmGenre, Long> {
     boolean deleteFilmGenreById(@Param("id") Long id);
 
     @Query("delete from FilmGenre fg where fg.name = :genre")
-    boolean deleteByName(@Param("genre") String genre);
+    void deleteByName(@Param("genre") String genre);
 }

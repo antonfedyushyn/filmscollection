@@ -30,8 +30,8 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler{
         redirectStrategy.sendRedirect(request, response, targetUrl);
     }
 
-    protected String determineTargetUrl(Authentication authentication) {
-        String url="";
+    private String determineTargetUrl(Authentication authentication) {
+        String url;
 
         Collection<? extends GrantedAuthority> authorities =  authentication.getAuthorities();
 
@@ -60,16 +60,18 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler{
     }
 
     private boolean isUser(List<String> roles) {
+        Boolean result = false;
         if (roles.contains("ROLE_USER")) {
-            return true;
+            result = true;
         }
-        return false;
+        return result;
     }
 
     private boolean isAdmin(List<String> roles) {
+        Boolean result = false;
         if (roles.contains("ROLE_ADMIN")) {
-            return true;
+            result = true;
         }
-        return false;
+        return result;
     }
 }

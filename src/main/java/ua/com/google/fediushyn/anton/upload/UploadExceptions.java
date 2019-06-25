@@ -1,11 +1,5 @@
 package ua.com.google.fediushyn.anton.upload;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
-import org.springframework.context.NoSuchMessageException;
-
-import java.util.Locale;
-
 public class UploadExceptions extends Exception {
 
     private String message = "";

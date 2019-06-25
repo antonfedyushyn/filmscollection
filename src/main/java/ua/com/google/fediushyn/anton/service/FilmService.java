@@ -14,8 +14,13 @@ import java.util.List;
 
 @Service
 public class FilmService {
+
+    private final FilmRepository filmRepository;
+
     @Autowired
-    private FilmRepository filmRepository;
+    FilmService(FilmRepository filmRepository){
+        this.filmRepository = filmRepository;
+    }
 
     @Transactional(readOnly = true)
     public Film getFilm(String film) {

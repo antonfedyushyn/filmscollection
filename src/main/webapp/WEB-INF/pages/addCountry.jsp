@@ -1,4 +1,8 @@
-<%--suppress ALL --%>
+<%--suppress ELValidationInJSP --%>
+<%--suppress JspAbsolutePathInspection --%>
+<%--suppress HtmlFormInputWithoutLabel --%>
+<%--suppress XmlPathReference --%>
+<%--suppress HtmlUnknownTarget --%>
 <%--
   Created by IntelliJ IDEA.
   User: Anton
@@ -25,15 +29,15 @@
     <div class="header">
         <div class="header44">
             <div class="main_menu">
-                <a href="/"><img src="<c:url value="resources/img/filmcollection.png" />" width="91" height="26"></a>
+                <a href="<c:url value="/"/>"><img src="<c:url value="resources/img/filmcollection.png" />" width="91" height="26"></a>
             </div>
             <div class="search_panel">
                 <span class="searchbar">
-                    <form action="/find" name="searchform" method="post">
+                    <form action="<c:url value="/find"/>" name="searchform" method="post">
                         <input name="titleonly" value="3" type="hidden">
                         <input type="hidden" name="do" value="search">
                         <input type="hidden" name="subaction" value="search">
-                        <input id="story" name="findText" value="Поиск" onblur="if(this.value=='') this.value='Поиск';" onfocus="if(this.value=='Поиск') this.value='';" type="text">
+                        <input id="story" name="findText" value="Поиск" onblur="if(this.value === '') this.value = 'Поиск';" onfocus="if(this.value === 'Поиск') this.value = '';" type="text" title="Поиск">
                         <button class="fbutton2" onclick="submit();" type="submit" title="ok" style="float: right;"><span>ok</span></button>
                     </form>
                 </span>
@@ -43,12 +47,12 @@
                     <c:set var="isAuth" value="${isRegistration}" />
                     <c:if test="${isAuth == true}">
                         <a class="lbn" id="logbtn" href="/user/${login}">${login}</a>  /
-                        <a class="thide lexit" href="/unauthorized">Выход</a>
+                        <a class="thide lexit" href="<c:url value="/unauthorized"/>">Выход</a>
                     </c:if>
                     <c:if test="${isAuth == false}">
                         <script>
                             function change(idName) {
-                                if(document.getElementById(idName).style.display=='none') {
+                                if(document.getElementById(idName).style.display === 'none') {
                                     document.getElementById(idName).style.display = '';
                                 } else {
                                     document.getElementById(idName).style.display = 'none';
@@ -57,14 +61,14 @@
                             }
                         </script>
 
-                        <a href="#" onclick="change('test')">Вход</a> / <a href="/register">Регистрация</a>
+                        <a href="#" onclick="change('test')">Вход</a> / <a href="<c:url value="/register"/>">Регистрация</a>
                     </c:if>
                 </div>
                 <div style="display:none; float:left; padding-left: 10px; padding-top: 4px;" id="test">
-                    <form method="post" action="/j_spring_security_check">
+                    <form method="post" action="<c:url value="/j_spring_security_check"/>">
                         <label for="j_login">Логин: </label>
                         <input type="text" name="j_login" id="j_login" style="width: 60px;"/>
-                        <label for="j_password">Пароль (<a href="/index.php?do=lostpassword">Забыли?</a>): </label>
+                        <label for="j_password">Пароль</label>
                         <input type="password" name="j_password" id="j_password"  style="width: 60px;"/>&nbsp;
                         <button class="fbutton2" onclick="submit();" type="submit" title="Войти"><span>Войти</span></button>
                         <input name="login" type="hidden" id="login" value="submit" />
@@ -77,29 +81,40 @@
     <div class="contener">
         <div class="content">
             <div id='dle-content'>
-                <form  method="post" name="addCountry" id="addCountry" action="/addCountry">
+                <form  method="post" name="addCountry" id="addCountry" action="<c:url value="/addCountry"/>">
                     <div class="padding_border">
                         <table class="tableform">
                             <tr>
-                                <td colspan="2">
+                                <td colspan="2" align="center">
                                     <p><b>Добавление новой страны производства фильма</b></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <c:if test = "${result == false}">
+                                        <br/><br/>
+                                        <h1><div class="errormsg"><c:out value="${resMessage}"/></div></h1>
+                                        <br/><br/>
+                                    </c:if>
                                 </td>
                             </tr>
                             <tr>
                                 <td width="167" class="label">Страна:</td>
                                 <td width="962">
-                                    <input type="text" name="countryName" id="countryName" class="f_input" value=""/> &nbsp;
+                                    <input type="text" name="countryName" id="countryName" class="f_input" value="" title="Страна"/> &nbsp;
                                 </td>
                             </tr>
                             <tr>
                                 <td width="167" class="label">Код страны:</td>
                                 <td width="962">
-                                    <input type="text" name="countryCode" id="countryCode" class="f_input" value=""/> &nbsp;
+                                    <input type="text" name="countryCode" id="countryCode" class="f_input" value="" title="Код страны"/> &nbsp;
                                 </td>
                             </tr>
                         </table>
-                        <c:if test="${error ne null}">
-                            <script>alert("${error}");</script>
+                        <c:if test = "${result == false}">
+                            <br/><br/>
+                            <h1><div class="errormsg"><c:out value="${resMessage}"/></div></h1>
+                            <br/><br/>
                         </c:if>
                         <div class="fieldsubmit"><br><br>
                             <button name="submit" class="fbutton" type="submit"><span>Отправить</span></button>
@@ -118,12 +133,12 @@
             <span class="leftblok_contener2">
                 <div class="leftblok1">
                     <div class="miniblock">
-                        <div class="mini" style="border-top:0px; padding-top:0px;">
+                        <div class="mini" style="border-top:0; padding-top:0;">
                             <div class="film_category">
-                                <a href="/addGenre" >Добавить новый жанр</a><br>
-                                <a href="/addYear" >Добавить новый год</a><br>
-                                <a href="/addCountry" >Добавить новую страну</a><br>
-                                <a href="/addFilm" >Добавить новый фильм</a><br>
+                                <a href="<c:url value="/addGenre"/>" >Добавить новый жанр</a><br>
+                                <a href="<c:url value="/addYear"/>" >Добавить новый год</a><br>
+                                <a href="<c:url value="/addCountry"/>" >Добавить новую страну</a><br>
+                                <a href="<c:url value="/addFilm"/>" >Добавить новый фильм</a><br>
                             </div>
                         </div>
                         <div style="padding-top:20px;"></div><!--div-->
@@ -131,7 +146,7 @@
                 </div><!--leftblok1-->
                 <div class="leftblok2">
                     <div class="miniblock">
-                        <div class="mini" style="border-top:0px; padding-top:0px;">
+                        <div class="mini" style="border-top:0; padding-top:0;">
                             <i style="font-size:14px;">Старны</i><br><br>
                             <div class="film_countries">
                                 <c:forEach var="s" items="${countries}">

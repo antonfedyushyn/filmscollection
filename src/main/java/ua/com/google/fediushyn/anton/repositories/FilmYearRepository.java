@@ -21,5 +21,5 @@ public interface FilmYearRepository extends JpaRepository<FilmYear, Long> {
     boolean deleteFilmYearById(@Param("id") Long id);
 
     @Query("delete from FilmYear fy where fy.name = :year")
-    boolean deleteByName(@Param("year") String year);
+    void deleteByName(@Param("year") String year);
 }

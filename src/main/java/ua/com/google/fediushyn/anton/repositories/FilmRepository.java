@@ -53,5 +53,5 @@ public interface FilmRepository extends JpaRepository<Film, Long> {
     boolean deleteFilmById(@Param("id_film") Long id);
 
     @Query("delete from Film f where f.name = :film_name")
-    boolean deleteByName(@Param("film_name") String name);
+    void deleteByName(@Param("film_name") String name);
 }

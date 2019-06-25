@@ -12,8 +12,13 @@ import java.util.List;
 
 @Service
 public class FilmYearService {
+
+    private final FilmYearRepository filmYearRepository;
+
     @Autowired
-    private FilmYearRepository filmYearRepository;
+    FilmYearService(FilmYearRepository filmYearRepository){
+        this.filmYearRepository = filmYearRepository;
+    }
 
     @Transactional(readOnly = true)
     public FilmYear getFilmYear(String year) {
@@ -45,8 +50,9 @@ public class FilmYearService {
         if (year.isEmpty()) {
             throw new FilmException("Film.year.name.is.empty", "Film year name is empty!");
         }
+
         try {
-            int yearInt = Integer.parseInt(year);
+            Integer.parseInt(year);
         } catch (NumberFormatException e) {
             throw new FilmException("Film.year.name.is.incorrect", "Film year name %s is incorrect!", year);
         }

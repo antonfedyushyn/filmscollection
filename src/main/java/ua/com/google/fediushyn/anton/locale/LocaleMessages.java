@@ -7,7 +7,7 @@ import java.util.Locale;
 
 public class LocaleMessages {
     public static String getLocaleMessage(MessageSource messageSource, String[] params, String message, String messageDefault){
-        String returnMessage = "";
+        String returnMessage;
         try {
             returnMessage = messageSource.getMessage(message, params, new Locale("ru"));
         } catch (NoSuchMessageException e) {
@@ -17,7 +17,7 @@ public class LocaleMessages {
     }
 
     public static String getLocaleMessage(MessageSource messageSource, String[] params, String message, String messageDefault, String fileName){
-        String returnMessage = "";
+        String returnMessage;
         try {
             returnMessage = messageSource.getMessage(message, params, new Locale("ru"));
         } catch (NoSuchMessageException e) {

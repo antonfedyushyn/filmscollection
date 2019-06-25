@@ -20,7 +20,7 @@ public class FilmYear {
     private String name;
 
     @OneToMany(mappedBy = "year")
-    protected List<Film> films = new ArrayList<>();
+    private final List<Film> films = new ArrayList<>();
 
     public FilmYear() {}
 
@@ -52,7 +52,7 @@ public class FilmYear {
         List<Film> films = getFilms();
         int start = (int)pageable.getOffset();
         int end = (start + pageable.getPageSize()) > films.size() ? films.size() : (start + pageable.getPageSize());
-        return new PageImpl<Film>(films.subList(start, end), pageable, films.size());
+        return new PageImpl<>(films.subList(start, end), pageable, films.size());
     }
 
     public void addFilm(Film film) {

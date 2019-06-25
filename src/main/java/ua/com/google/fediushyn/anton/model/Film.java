@@ -1,8 +1,5 @@
 package ua.com.google.fediushyn.anton.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import ua.com.google.fediushyn.anton.contorllers.FilmsController;
-
 import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -21,7 +18,7 @@ public class Film {
             joinColumns = {@JoinColumn(name = "id_film", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "id_film_genre", referencedColumnName = "id")}
     )
-    private List<FilmGenre> filmGenres = new ArrayList<FilmGenre>();
+    private final List<FilmGenre> filmGenres = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_country")
@@ -64,7 +61,7 @@ public class Film {
     private String posterFileName;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "comment", fetch = FetchType.EAGER)
-    private List<FilmComment> filmComments = new ArrayList<FilmComment>();
+    private final List<FilmComment> filmComments = new ArrayList<>();
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "film")
     private FilmDetail filmDetail;

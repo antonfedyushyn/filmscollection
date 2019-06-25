@@ -1,17 +1,14 @@
 package ua.com.google.fediushyn.anton.contorllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.configurationprocessor.json.JSONArray;
 import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
-import org.springframework.context.MessageSource;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import ua.com.google.fediushyn.anton.consts.ConfigProperties;
@@ -26,8 +23,8 @@ import java.util.List;
 
 @Controller
 public class UploadContorller {
-    private FilmsController filmsController;
-    private ConfigProperties configProp;
+    private final FilmsController filmsController;
+    private final ConfigProperties configProp;
 
     @Autowired
     UploadContorller(FilmsController filmsController,
@@ -164,29 +161,6 @@ public class UploadContorller {
         return resMessage;
     }
 
-    @PostMapping("/uploadPoster")
-    public String uploadPosterImage(@RequestParam("file") MultipartFile file) {
-        Boolean result = false;
-        String resMessage;
-        try {
-            String fileName = (new UploadFiles()).uploadSingleImageFile(file, true);
-            result = true;
-            resMessage = filmsController.getLocaleMessage("Success.uploadForm.files",
-                    "Files uploaded successfully!");
-        } catch (UploadExceptions e) {
-            resMessage = filmsController.getLocaleMessage(e.getMessage(), e.getDefaultMessage(), e.getFileName());
-        }
-        JSONObject response = new JSONObject();
-        try {
-            response.put("resMessage", resMessage);
-            response.put("result", result);
-            resMessage = response.toString();
-        } catch (JSONException e) {
-            resMessage = e.getMessage();
-        }
-        return resMessage;
-    }
-
     @GetMapping(value = "/imageFile")
     public ResponseEntity<byte[]> getImageFile(@RequestParam(name="fileName") String fileName) {
         byte[] imageContext = null;
@@ -226,7 +200,6 @@ public class UploadContorller {
         } catch (UploadExceptions e){
             status = HttpStatus.INTERNAL_SERVER_ERROR;
         }
-        File f = new File(configProp.getConfigValue("directory.upload.files") + File.separator + configProp.getConfigValue("directory.upload.images") + File.separator + fileName);
 
         HttpHeaders headers = new HttpHeaders();
         long videoContentLength;

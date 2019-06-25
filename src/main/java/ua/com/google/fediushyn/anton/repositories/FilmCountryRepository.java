@@ -27,5 +27,5 @@ public interface FilmCountryRepository extends JpaRepository<FilmCountry, Long> 
     boolean deleteFilmCountryById(@Param("id") Long id);
 
     @Query("DELETE FROM FilmCountry fc WHERE fc.name = :country")
-    boolean deleteByName(@Param("country") String country);
+    void deleteByName(@Param("country") String country);
 }

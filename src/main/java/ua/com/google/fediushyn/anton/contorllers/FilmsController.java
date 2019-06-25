@@ -24,17 +24,17 @@ import java.util.Locale;
 
 @Controller
 public class FilmsController {
-    private UserService userService;
-    private FilmYearService filmYearService;
-    private FilmCountryService filmCountryService;
-    private FilmGenreService filmGenreService;
-    private FilmService filmService;
+    private final UserService userService;
+    private final FilmYearService filmYearService;
+    private final FilmCountryService filmCountryService;
+    private final FilmGenreService filmGenreService;
+    private final FilmService filmService;
 
-    private PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
-    private SecurityServiceImpl securityService;
+    private final SecurityService securityService;
 
-    private MessageSource messageSource;
+    private final MessageSource messageSource;
 
     @Autowired
     FilmsController(UserService userService,
@@ -43,7 +43,7 @@ public class FilmsController {
                     FilmGenreService filmGenreService,
                     FilmService filmService,
                     PasswordEncoder passwordEncoder,
-                    SecurityServiceImpl securityService,
+                    SecurityService securityService,
                     MessageSource messageSource){
         this.userService = userService;
         this.filmYearService = filmYearService;
@@ -90,7 +90,6 @@ public class FilmsController {
             User user = (User) principal;
             String login = user.getUsername();
             if (!login.isEmpty()) {
-                CustomUser dbUser = userService.findByLogin(login);
                 model.addAttribute("isRegistration", true);
                 model.addAttribute("login", login);
                 model.addAttribute("roles", user.getAuthorities());
@@ -139,7 +138,7 @@ public class FilmsController {
         setResultMessage(result, resMessage, model);
     }
 
-    protected void setContext(Model model){
+    void setContext(Model model){
         setUserData(model);
         setFilmYears(model);
         setFilmCountries(model);
@@ -213,25 +212,19 @@ public class FilmsController {
 
     @GetMapping("/user/{login}")
     public String user(@PathVariable(value = "login") String userLogin){
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String login = securityService.findLoggedInUsername();
         String url;
-        if (principal instanceof User) {
-            User user = (User) principal;
-            String login = user.getUsername();
-            if (userLogin.equals(login)) {
-               CustomUser dbUser = userService.findByLogin(login);
-               switch (dbUser.getRole()){
-                   case USER:
-                       url = "redirect:/";
-                       break;
-                   case ADMIN:
-                       url = "redirect:/admin";
-                       break;
-                   default:
-                       url = "redirect:/";
-               }
-            } else {
-                url = "redirect:/";
+        if (userLogin.equals(login)) {
+            CustomUser dbUser = userService.findByLogin(login);
+            switch (dbUser.getRole()){
+                case USER:
+                    url = "redirect:/";
+                    break;
+                case ADMIN:
+                    url = "redirect:/admin";
+                    break;
+                default:
+                    url = "redirect:/";
             }
         } else {
             url = "redirect:/";

@@ -12,8 +12,12 @@ import java.util.List;
 
 @Service
 public class FilmGenreService {
+    private final FilmGenreRepository filmGenreRepository;
+
     @Autowired
-    private FilmGenreRepository filmGenreRepository;
+    public FilmGenreService(FilmGenreRepository filmGenreRepository) {
+        this.filmGenreRepository = filmGenreRepository;
+    }
 
     @Transactional(readOnly = true)
     public FilmGenre getFilmGenre(String genre) {

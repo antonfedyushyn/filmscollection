@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FilmPage {
-    public static enum TypePage{
+    public enum TypePage{
         FIRSTPAGE,
         PREVIOUSPAGE,
         PAGE,
         NEXTPAGE,
-        LASTPAGE;
+        LASTPAGE
     }
     private int number;
     private Boolean isActive;
@@ -18,11 +18,13 @@ public class FilmPage {
 
     private TypePage typePage;
 
-    public FilmPage() {}
+    public FilmPage() {
+        super();
+    }
 
     public FilmPage(Boolean isActive, int number, String url, TypePage typePage) {
         this.number = number;
-        this.name = new Integer(number+1).toString();
+        this.name = Integer.toString(number + 1);
         this.url = url;
         this.isActive = isActive;
         this.typePage = typePage;
@@ -48,7 +50,7 @@ public class FilmPage {
         return isActive;
     }
 
-    public void setIsActive(Boolean IsActive) {
+    public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
     }
 
@@ -77,7 +79,7 @@ public class FilmPage {
     }
 
     public static List<FilmPage> generatePagesList(int countPages, int currentPage, String urlPref, Boolean isFirstParam) {
-        List<FilmPage> filmPages = new ArrayList<FilmPage>();
+        List<FilmPage> filmPages = new ArrayList<>();
         String url = urlPref;
         if (!isFirstParam) {
             url += "&";

@@ -28,7 +28,7 @@ public class FilmGenre {
             joinColumns = {@JoinColumn(name = "id_film_genre", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "id_film", referencedColumnName = "id")}
     )
-    private List<Film> films = new ArrayList<Film>();
+    private final List<Film> films = new ArrayList<>();
 
     public FilmGenre() {}
 
@@ -54,7 +54,7 @@ public class FilmGenre {
         List<Film> films = getFilms();
         int start = (int)pageable.getOffset();
         int end = (start + pageable.getPageSize()) > films.size() ? films.size() : (start + pageable.getPageSize());
-        return new PageImpl<Film>(films.subList(start, end), pageable, films.size());
+        return new PageImpl<>(films.subList(start, end), pageable, films.size());
     }
 
     public long getId() {

@@ -1,6 +1,5 @@
 package ua.com.google.fediushyn.anton.repositories;
 
-import com.sun.istack.internal.Nullable;
 import ua.com.google.fediushyn.anton.model.FilmCountry;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

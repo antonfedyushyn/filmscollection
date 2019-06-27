@@ -80,8 +80,9 @@
                                 <input name="titleonly" value="3" type="hidden">
                                 <input type="hidden" name="do" value="search">
                                 <input type="hidden" name="subaction" value="search">
-                                <input id="story" name="findText" value="Поиск" onblur="if(this.value==='') this.value='Поиск';" onfocus="if(this.value==='Поиск') this.value='';" type="text" title="Поиск">
-                                <button class="fbutton2" onclick="submit();" type="submit" title="ok" style="float: right;"><span>ok</span></button>
+                                <input id="story" name="findText" value="Поиск" onblur="if(this.value==='') this.value='Поиск';" onfocus="if(this.value==='Поиск') this.value='';"
+                                       title="Поиск">
+                                <button class="fbutton2" onclick="submit();" title="ok" style="float: right;"><span>ok</span></button>
                             </form>
                         </span>
             </div>
@@ -111,10 +112,10 @@
                 <div style="display:none; float:left; padding-left: 10px; padding-top: 4px;" id="test">
                     <form method="post" action="<c:url value="/j_spring_security_check"/>">
                         <label for="j_login">Логин: </label>
-                        <input type="text" name="j_login" id="j_login" style="width: 60px;"/>
+                        <input name="j_login" id="j_login" style="width: 60px;"/>
                         <label for="j_password">Пароль</label>
                         <input type="password" name="j_password" id="j_password"  style="width: 60px;"/>&nbsp;
-                        <button class="fbutton2" onclick="submit();" type="submit" title="Войти"><span>Войти</span></button>
+                        <button class="fbutton2" onclick="submit();" title="Войти"><span>Войти</span></button>
                         <input name="login" type="hidden" id="login" value="submit" />
                     </form>
                 </div>
@@ -137,18 +138,26 @@
                                 <div class="shortstorytitle">
                                     <h1> <c:out value="${film.name}"/></h1>
                                 </div><!--shortstorytitle-->
-                                <div class="shortimg">
+                                <div class="fullimg">
                                     <div id="news-id-<c:out value="${film.id}"/>" style="display:inline;">
-                                        <a href="<c:out value="${film.posterUrl}"/>" onclick="return hs.expand(this)" >
-                                            <img src="<c:out value="${film.posterUrl}"/>" style="float:left; width: 35%" alt='<c:out value="${film.name}"/>' title='<c:out value="${s.name}"/>'  />
-                                        </a>
-                                        <c:out value="${film.notes}"/>
+                                        <table width="100%" style="border: 0;">
+                                            <tr>
+                                                <td style="width:230px;" valign="top">
+                                                    <a href="<c:out value="${film.posterUrl}"/>" onclick="return hs.expand(this)" >
+                                                        <img src="<c:out value="${film.posterUrl}"/>" style="float:left; width: 210px" alt='<c:out value="${film.name}"/>' title='<c:out value="${s.name}"/>'  />
+                                                    </a>
+                                                </td>
+                                                <td valign="top">
+                                                    <c:out value="${film.notes}"/>
+                                                </td>
+                                            </tr>
+                                        </table>
                                         <br /><br />
-                                        <b>Год выпуска:</b> <a href="/year?code=<c:out value="${film.year.name}"/>/" ><c:out value="${film.year.name}"/></a><br />
-                                        <b>Страна:</b> <a href="/country?code=<c:out value="${film.country.code}"/>/" ><c:out value="${film.country.name}"/></a><br />
+                                        <b>Год выпуска:</b> <a href="/year?code=<c:out value="${film.year.name}"/>" ><c:out value="${film.year.name}"/></a><br />
+                                        <b>Страна:</b> <a href="/country?code=<c:out value="${film.country.code}"/>" ><c:out value="${film.country.name}"/></a><br />
                                         <b>Жанр:</b>
                                             <c:forEach var="s" items="${film.filmGenres}">
-                                                <a href="/genre?code<c:out value="${s.code}"/>/" ><c:out value="${s.name}"/></a>,
+                                                <a href="/genre?code=<c:out value="${s.code}"/>" ><c:out value="${s.name}"/></a>,
                                             </c:forEach>
                                         <br /><b>Качество:</b> <c:out value="${film.qualityStr}"/><br />
                                         <b>Перевод:</b> <spring:message code="${film.translationStr}"/><br />
@@ -161,15 +170,31 @@
                                 </div>
                                 <br/><br/>
                                     <div class="owl-carousel owl-theme">
-                                        <c:forEach var="s" items="${film.filmDetail.imagesPathes}">
-                                            <div class="item">
-                                                <a href="<c:out value="${s}"/>" onclick="return hs.expand(this)" >
-                                                    <img src="<c:out value="${s}" /> " alt="${film.name}" title="${film.name}" style="width: auto; height: auto; max-width: 190px;"/>
-                                                </a>
-                                            </div>
-                                        </c:forEach>
+                                        <c:if test="${film.filmDetail.imagesPathes ne null}" >
+                                            <c:if test="${film.filmDetail.countImages > 0}" >
+                                                <c:forEach var="s" items="${film.filmDetail.imagesPathes}">
+                                                    <div class="item">
+                                                        <a href="<c:out value="${s}"/>" onclick="return hs.expand(this)" >
+                                                            <img src="<c:out value="${s}" /> " alt="${film.name}" title="${film.name}" style="width: auto; height: auto; max-width: 190px;"/>
+                                                        </a>
+                                                    </div>
+                                                </c:forEach>
+                                            </c:if>
+                                        </c:if>
                                     </div>
                                 <br/>
+
+                                <c:if test="${userRole == 'ADMIN'}" >
+                                    <div align="center">
+                                        <span class="editicon"  title="Удалить">
+                                            <input type="hidden" id="filmName_<c:out value="${s.code}"/>" value="<c:out value="${s.name}"/>" />
+                                            <input type="button" id="<c:out value="${film.code}"/>" class="remove_film" value="Удалить фильм" />
+                                        </span>
+                                        <span class="editicon"  title="Редактировать">
+                                            <a href="/editFilm?code=<c:out value="${film.code}"/>"><b>Редактировать</b></a>
+                                        </span>
+                                    </div>
+                                </c:if>
                                 <div class="stronk"><strong>смотреть онлайн <c:out value="${film.name}"/> в хорошем качестве</strong></div>
 
 
@@ -183,6 +208,7 @@
                                 <div class="box visible" style="display: block; background: rgb(0, 0, 0); ">
                                     <script src="/resources/js/playerjs10.js" type="text/javascript"></script>
                                     <div id="videoplayer" style="width:640px;height:400px;"></div>
+<%--suppress ThisExpressionReferencesGlobalObjectJS --%>
                                     <script type="text/javascript">
                                         // HTML5
                                         this.videoplayer = new Playerjs({id:"videoplayer", file:"<c:out value="${film.filmDetail.pathFilm}"/>"});
@@ -259,17 +285,54 @@
 </body>
 </html>
 <script>
-$(function() {
-    // Owl Carousel
-    var owl = $(".owl-carousel");
-    owl.owlCarousel({
-        items: 3,
-        margin: 3,
-        loop: false,
-        center: false,
-        mergeFit: true,
-        autoWidth: true,
-        nav: true
+    $(function() {
+        // Owl Carousel
+        var owl = $(".owl-carousel");
+        owl.owlCarousel({
+            items: 3,
+            margin: 3,
+            loop: false,
+            center: false,
+            mergeFit: true,
+            autoWidth: true,
+            nav: true
+        });
     });
-});
+
+    $(".remove_film").on("click", function (){
+        var filmCode = this.id;
+        var filmName = $("#filmName_"+filmCode).val();
+        if (confirm("Вы действительно хотите удалить фильм '"+filmName+"'?")) {
+            $.ajax({
+                url: "/removeFilm",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    "filmCode": filmCode
+                },
+                error: function () {
+                    alert('ОШИБКА ОТВЕТА СЕРВЕРА!');
+                },
+                success: function (responseData) {
+                    if (typeof(responseData) === "object") {
+                        if (responseData.result){
+                            window.open('/','_self');
+                        } else {
+                            alert(res.message);
+                        }
+                    } else {
+                        if (typeof(responseData) === "string") {
+                            if (responseData === "error"){
+                                alert("Ошибка удаления фильма!")
+                            } else {
+                                window.open('/','_self');
+                            }
+                        } else {
+                            window.open('/','_self');
+                        }
+                    }
+                }
+            });
+        }
+    })
 </script>

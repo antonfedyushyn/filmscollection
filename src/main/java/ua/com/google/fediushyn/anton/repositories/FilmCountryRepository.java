@@ -1,10 +1,12 @@
 package ua.com.google.fediushyn.anton.repositories;
 
+import com.sun.istack.internal.Nullable;
 import ua.com.google.fediushyn.anton.model.FilmCountry;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 
 public interface FilmCountryRepository extends JpaRepository<FilmCountry, Long> {
@@ -21,6 +23,7 @@ public interface FilmCountryRepository extends JpaRepository<FilmCountry, Long> 
     boolean existsByCode(@Param("code") String code);
 
     @Query("SELECT fc FROM FilmCountry fc order by fc.name")
+    @Nonnull
     List<FilmCountry> findAll();
 
     @Query("DELETE FROM FilmCountry fc WHERE fc.id = :id")

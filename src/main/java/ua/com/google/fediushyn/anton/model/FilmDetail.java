@@ -80,14 +80,31 @@ public class FilmDetail {
 
     public List<String> getImagesPathes(){
       String imgsPath = imagesPath;
-      ArrayList<String> pathes = new ArrayList<>();
-      if (imgsPath.length() > 0) {
+      ArrayList<String> pathes = null;
+      if ((imagesPath != null) && (imgsPath.length() > 0)) {
           pathes = new ArrayList<>(Arrays.asList(imgsPath.split(",")));
       }
       return pathes;
     }
 
+    public String getImagesPath() {
+        return imagesPath;
+    }
+
+    public int getCountImages(){
+        List<String> pathces = getImagesPathes();
+        int result = 0;
+        if (pathces != null) {
+            result = pathces.size();
+        }
+        return result;
+    }
+
     public void setImagesPathes(List<String> imagesPathes){
-        this.imagesPath = String.join(",", imagesPathes);
+        if ((imagesPathes == null) || (imagesPathes.isEmpty())) {
+            this.imagesPath = null;
+        } else {
+            this.imagesPath = String.join(",", imagesPathes);
+        }
     }
 }

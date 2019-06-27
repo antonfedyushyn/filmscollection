@@ -77,6 +77,9 @@
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: com.googlecode.json-simple:json-simple:unknown" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
+          <element id="library" level="project" name="Maven: com.google.code.findbugs:annotations:3.0.1" />
+          <element id="library" level="project" name="Maven: net.jcip:jcip-annotations:1.0" />
+          <element id="library" level="project" name="Maven: com.google.code.findbugs:jsr305:3.0.1" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-data-jdbc:2.1.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-jdbc:1.0.6.RELEASE" />
         </element>

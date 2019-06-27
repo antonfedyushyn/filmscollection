@@ -1,10 +1,12 @@
 package ua.com.google.fediushyn.anton.repositories;
 
+import org.springframework.lang.NonNull;
 import ua.com.google.fediushyn.anton.model.FilmGenre;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 
 public interface FilmGenreRepository extends JpaRepository<FilmGenre, Long> {
@@ -24,6 +26,7 @@ public interface FilmGenreRepository extends JpaRepository<FilmGenre, Long> {
     boolean existsByCode(@Param("code") String code);
 
     @Query("select fg from FilmGenre fg order by fg.name")
+    @Nonnull
     List<FilmGenre> findAll();
 
     @Query("delete from FilmGenre fg where fg.id = :id")

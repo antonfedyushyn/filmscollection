@@ -1,5 +1,6 @@
 package ua.com.google.fediushyn.anton.repositories;
 
+import org.springframework.lang.NonNull;
 import ua.com.google.fediushyn.anton.model.FilmYear;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -15,7 +16,7 @@ public interface FilmYearRepository extends JpaRepository<FilmYear, Long> {
     boolean existsByName(@Param("year") String year);
 
     @Query("select fy from FilmYear fy order by fy.name")
-    List<FilmYear> findAll();
+    @NonNull List<FilmYear> findAll();
 
     @Query("delete from FilmYear fy where fy.id = :id")
     boolean deleteFilmYearById(@Param("id") Long id);

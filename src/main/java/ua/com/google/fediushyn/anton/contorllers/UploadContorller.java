@@ -73,7 +73,6 @@ public class UploadContorller {
         String resMessage;
         List<String> filesName = null;
 
-
         UploadFiles upload = new UploadFiles();
         try {
             filesName = upload.uploadMultiImageFiles(file);
@@ -134,33 +133,6 @@ public class UploadContorller {
         return resMessage;
     }
 
-    @PostMapping("/")
-    @ResponseBody
-    public String uploadImageFile(@RequestParam("file") MultipartFile file) {
-        Boolean result = false;
-        String resMessage;
-        String fileName = "";
-        UploadFiles upload = new UploadFiles();
-        try {
-            fileName = upload.uploadSingleImageFile(file, false);
-            result = true;
-            resMessage = filmsController.getLocaleMessage("Success.uploadForm.file",
-                    "File %s uploaded successfully!", fileName);
-        } catch (UploadExceptions e) {
-            resMessage = filmsController.getLocaleMessage(e.getMessage(), e.getDefaultMessage(), e.getFileName());
-        }
-        JSONObject response = new JSONObject();
-        try {
-            response.put("resMessage", resMessage);
-            response.put("result", result);
-            response.put("imageUrl", "/imageFile?fileName="+fileName);
-            resMessage = response.toString();
-        } catch (JSONException e) {
-            resMessage = e.getMessage();
-        }
-        return resMessage;
-    }
-
     @GetMapping(value = "/imageFile")
     public ResponseEntity<byte[]> getImageFile(@RequestParam(name="fileName") String fileName) {
         byte[] imageContext = null;
@@ -191,28 +163,6 @@ public class UploadContorller {
         return new ResponseEntity<>(imageContext, headers, status);
     }
 
-    @GetMapping(value = "/videoFile")
-    public ResponseEntity<byte[]> getVideoFile(@RequestParam(name="fileName") String fileName) {
-        byte[] videoContext = null;
-        HttpStatus status = HttpStatus.OK;
-        try{
-            videoContext = (new UploadFiles()).getVideoContext(fileName);
-        } catch (UploadExceptions e){
-            status = HttpStatus.INTERNAL_SERVER_ERROR;
-        }
-
-        HttpHeaders headers = new HttpHeaders();
-        long videoContentLength;
-        if (videoContext == null) {
-            videoContentLength = 0;
-        } else {
-            videoContentLength = videoContext.length;
-        }
-        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
-        headers.setContentLength(videoContentLength);
-        return new ResponseEntity<>(videoContext, headers, status);
-    }
-
     @GetMapping(value = "/videosrc", produces = "video/mp4")
     @ResponseBody
     public FileSystemResource videoSource(@RequestParam(value="fileName") String fileName) {
@@ -225,6 +175,7 @@ public class UploadContorller {
     }
 
     @PostMapping("/deleteFile")
+    @ResponseBody
     public String deleteFile(@RequestParam("fileName") String fileName){
         String resMessage;
 
@@ -235,7 +186,7 @@ public class UploadContorller {
             json.put("result", true);
             resMessage = json.toString();
         } catch (JSONException e){
-            resMessage = "";
+            resMessage = "ok";
         }
         return resMessage;
     }

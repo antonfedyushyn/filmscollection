@@ -56,8 +56,8 @@ public class FilmYearService {
         } catch (NumberFormatException e) {
             throw new FilmException("Film.year.name.is.incorrect", "Film year name %s is incorrect!", year);
         }
-        FilmYear filmYesr = new FilmYear(year);
-        filmYearRepository.save(filmYesr);
+        FilmYear filmYear = new FilmYear(year);
+        filmYearRepository.save(filmYear);
     }
 
     @Transactional

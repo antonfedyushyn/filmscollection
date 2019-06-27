@@ -93,6 +93,10 @@ public class FilmsController {
                 model.addAttribute("isRegistration", true);
                 model.addAttribute("login", login);
                 model.addAttribute("roles", user.getAuthorities());
+                CustomUser customUser = userService.findByLogin(login);
+                if (customUser != null) {
+                    model.addAttribute("userRole", customUser.getRole());
+                }
             } else {
                 model.addAttribute("isRegistration", false);
             }

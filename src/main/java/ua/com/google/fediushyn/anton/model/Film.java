@@ -50,7 +50,7 @@ public class Film {
     @Column(name = "translation")
     private FilmTranslation translation;
 
-    @Column(name = "dt_premiere", nullable = false)
+    @Column(name = "dt_premiere")
     @Temporal(TemporalType.TIMESTAMP)
     private Date premiereDate;
 
@@ -68,8 +68,29 @@ public class Film {
 
     public Film() {}
 
-    public Film(String name){
+    public Film(String name) {
         this.name = name;
+    }
+
+    public void addGenre(FilmGenre filmGenre){
+        if (!filmGenres.contains(filmGenre)){
+            filmGenres.add(filmGenre);
+        }
+    }
+
+    public void removeGenre(FilmGenre filmGenre){
+        if (filmGenres.contains(filmGenre)) {
+            filmGenres.remove(filmGenre);
+        }
+    }
+
+    public void removeAllGenres(){
+        if (filmGenres.size() > 0) {
+            while (filmGenres.size() > 0){
+                FilmGenre genre = filmGenres.get(0);
+                removeGenre(genre);
+            }
+        }
     }
 
     public Film(String name, String notes, FilmQualities quality, String duration, FilmTranslation translation, Date premiereDate,
@@ -81,12 +102,6 @@ public class Film {
         this.translation = translation;
         this.premiereDate = premiereDate;
         this.posterUrl = posterUrl;
-    }
-
-    public void addGenre(FilmGenre filmGenre){
-        if (!filmGenres.contains(filmGenre)){
-            filmGenres.add(filmGenre);
-        }
     }
 
     public List<FilmGenre> getFilmGenres() {
@@ -164,7 +179,11 @@ public class Film {
     }
 
     public String getNotes() {
-        return notes;
+        if (this.notes != null) {
+            return notes.trim();
+        } else {
+            return null;
+        }
     }
 
     public void setNotes(String notes) {
@@ -180,11 +199,11 @@ public class Film {
     }
 
     public String getDuration() {
-        return duration;
+        return duration.trim();
     }
 
     public void setDuration(String duration) {
-        this.duration = duration;
+        this.duration = duration.trim();
     }
 
     public FilmTranslation getTranslation() {
@@ -204,19 +223,19 @@ public class Film {
     }
 
     public String getPosterUrl() {
-        return posterUrl;
+        return posterUrl.trim();
     }
 
     public void setPosterUrl(String posterUrl) {
-        this.posterUrl = posterUrl;
+        this.posterUrl = posterUrl.trim();
     }
 
     public String getPosterFileName() {
-        return posterFileName;
+        return posterFileName.trim();
     }
 
     public void setPosterFileName(String posterFileName) {
-        this.posterFileName = posterFileName;
+        this.posterFileName = posterFileName.trim();
     }
 
     public String getDateUploadFmt(){

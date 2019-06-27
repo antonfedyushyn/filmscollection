@@ -3,14 +3,7 @@
     margin-left: 6px;
 }
 
-.mass_comments_action {
-    text-align: right;
-}
-
 /*---Календарь---*/
-.calendar {
-    width: 100%;
-}
 
 .calendar td, .calendar th {
     padding: 5px 0;
@@ -18,45 +11,13 @@
     text-align: center;
 }
 
-.weekday-active-v, .day-active-v, .weekday-active, .day-active {
-    font-weight: bold;
-}
-
-.weekday {
-    color: #b270ce;
-}
-
-th.workday, th.weekday {
-    background-color: #f4f8fa;
-}
-
-.monthselect {
-    font-size: 1.15em;
-}
-
-.day-current {
-    background-color: #3f4b51;
-    color: #fff;
-}
-
 .day-current a {
     color: #fff;
 }
 
 /*---Лучшие пользователи---*/
-.userstop td, .pm td.pm_list, .pm td.pm_head {
-    border: 1px solid rgb(70, 68, 68);
-    padding: 2px;
-}
-
-.userstop thead td, .pm td.pm_head {
-    font-weight: bold;
-    text-align: center;
-    background: rgb(29, 29, 29);
-}
 
 .editor textarea {
-    font-family: Verdana;
     word-spacing: 0.1em;
     letter-spacing: 0;
     line-height: 1.5em;
@@ -70,28 +31,6 @@ th.workday, th.weekday {
     padding: 2px;
     background: #fff url("../img/fields.png") repeat-x;
     border: 1px solid #bcc0c2;
-}
-
-.editor_button {
-    float: left;
-    cursor: pointer;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.editor_buttoncl {
-    float: left;
-    cursor: pointer;
-    padding-left: 1px;
-    padding-right: 1px;
-    border-left: 1px solid #bbb;
-    border-right: 1px solid #bbb;
-}
-
-.editbclose {
-    float: right;
-    cursor: pointer;
-    display: none;
 }
 
 .editor_button select {
@@ -118,8 +57,8 @@ th.workday, th.weekday {
 .xfields textarea, .xprofile textarea {
     width: 98%;
     height: 186px;
-    margin: 0px 1px 0px 0px;
-    padding: 0px;
+    margin: 0 1px 0 0;
+    padding: 0;
 }
 
 .xfields input, .xprofile input {
@@ -133,20 +72,8 @@ th.workday, th.weekday {
 }
 
 /*---Персональные сообщения---*/
-.pm_head {
-    font-weight: bold;
-}
 
 /*---Выпадающее меню кнопки редактировать---*/
-#dropmenudiv {
-    border: 1px solid #E6E6D4;
-    background-color: #fff;
-    line-height: 20px;
-    margin: 2px 0;
-    padding: 5px;
-    background: #848480;
-    font-size:13px;
-}
 
 #dropmenudiv a {
     display: block;
@@ -160,9 +87,6 @@ th.workday, th.weekday {
 
 
 /*---Ссылка на скачивание прикрепленного файла---*/
-.attachment {
-    color: #808080;
-}
 
 /*---Рамка расширенной формы поиска по сайту---*/
 fieldset {
@@ -252,20 +176,6 @@ fieldset {
     text-decoration: none;
 }
 
-.ui-state-error {
-    background: #fef1ec 50% 50% repeat-x;
-    border: 1px solid #dedede;
-    color: #cd0a0a;
-}
-
-.ui-icon-close {
-    background-position: -80px -128px;
-}
-
-.ui-icon-closethick {
-    background-position: -96px -128px;
-}
-
 .ui-button .ui-button-text {
     display: block;
 }
@@ -273,33 +183,6 @@ fieldset {
 .ui-button-text-only .ui-button-text {
     color: #000;
     font-weight: bold;
-}
-
-input.ui-button {
-    padding: .4em 1em;
-}
-
-.ui-button-set {
-    margin-right: 7px;
-}
-
-.ui-button-set .ui-button {
-    margin-left: 0;
-    margin-right: -.3em;
-}
-
-button.ui-button::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-}
-
-.ui-dialog {
-    overflow: hidden;
-
-    position: absolute;
-    width: 300px;
-
-
 }
 
 .ui-dialog .ui-dialog-titlebar {
@@ -330,19 +213,6 @@ button.ui-button::-moz-focus-inner {
     padding: 0;
 }
 
-.ui-dialog .ui-dialog-content {
-
-    background: none;
-    border: 0;
-    overflow: hidden;
-    padding: 0 20px 20px 20px;
-    position: relative;
-    zoom: 1;
-
-}
-
-b.ui-dialog-content {color:rgb(241, 241, 241);}
-
 .ui-dialog .ui-dialog-buttonpane {
     background-image: none;
     border-width: 1px 0 0 0;
@@ -357,13 +227,6 @@ b.ui-dialog-content {color:rgb(241, 241, 241);}
     overflow: visible;
     padding: .2em .6em .3em .6em;
     width: auto;
-}
-
-.ui-dialog .ui-resizable-se {
-    bottom: 3px;
-    height: 14px;
-    right: 3px;
-    width: 14px;
 }
 
 .ui-draggable .ui-dialog-titlebar {
@@ -381,26 +244,6 @@ b.ui-dialog-content {color:rgb(241, 241, 241);}
 }
 
 /* without this, the menu expands to 100% in IE6 */
-.ui-menu {
-    list-style:none;
-    padding: 2px;
-    margin: 0;
-    display:block;
-    float: left;
-}
-
-.ui-menu .ui-menu {
-    margin-top: -3px;
-}
-
-.ui-menu .ui-menu-item {
-    margin:0;
-    padding: 0;
-    zoom: 1;
-    float: left;
-    clear: left;
-    width: 100%;
-}
 
 .ui-menu .ui-menu-item a {
     text-decoration:none;
@@ -423,39 +266,6 @@ pre code {
     border: 1px solid #dce7e7;
     overflow:auto;
     white-space: pre;
-}
-
-pre .comment,pre .template_comment,pre .diff .header,pre .doctype,pre .lisp .string,pre .javadoc {
-    color: #93a1a1;
-    font-style: italic;
-}
-
-pre .keyword,pre .css .rule .keyword,pre .winutils,pre .javascript .title,pre .method,pre .addition,pre .css .tag,pre .lisp .title {
-    color: #859900;
-}
-
-pre .number,pre .command,pre .string,pre .tag .value,pre .phpdoc,pre .tex .formula,pre .regexp,pre .hexcolor {
-    color: #2aa198;
-}
-
-pre .title,pre .localvars,pre .function .title,pre .chunk,pre .decorator,pre .builtin,pre .built_in,pre .lisp .title,pre .identifier,pre .title .keymethods,pre .id {
-    color: #268bd2;
-}
-
-pre .tag .title,pre .rules .property,pre .django .tag .keyword {
-    font-weight: bold;
-}
-
-pre .attribute,pre .variable,pre .instancevar,pre .lisp .body,pre .smalltalk .number,pre .constant,pre .class .title,pre .parent,pre .haskell .label {
-    color: #b58900;
-}
-
-pre .preprocessor,pre .pi,pre .shebang,pre .symbol,pre .diff .change,pre .special,pre .keymethods,pre .attr_selector,pre .important,pre .subst,pre .cdata {
-    color: #cb4b16;
-}
-
-pre .deletion {
-    color: #dc322f;
 }
 
 pre .tex .formula {

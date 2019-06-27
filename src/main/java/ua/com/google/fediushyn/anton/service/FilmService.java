@@ -88,14 +88,21 @@ public class FilmService {
     }
 
     @Transactional
+    public void saveFilm(Film film){
+        filmRepository.save(film);
+    }
+
+    @Transactional
     public void deleteFilm(String filmName) {
         if (!filmRepository.existsByName(filmName)) return;
         filmRepository.deleteByName(filmName);
     }
 
     @Transactional
-    public void deleteFilmByID(Long filmID) {
-        if (!filmRepository.existsById(filmID)) return;
+    public void deleteFilmByID(Long filmID) throws FilmException{
+        if (!filmRepository.existsById(filmID)) {
+            throw new FilmException("Films.not.found", "Movies not found!");
+        }
         filmRepository.deleteById(filmID);
     }
 }

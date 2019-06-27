@@ -19,6 +19,7 @@
             body {background: url(<c:url value="resources/img/IronMan3.jpg" />) 50% 0 no-repeat #000;}
         </style>
         <script type="text/javascript" src="resources/highslide/highslide.js"></script>
+        <script src="<c:url value="https://code.jquery.com/jquery-1.12.4.js" />"></script>
     </head>
 
     <body bgcolor='#ccc'>
@@ -55,8 +56,9 @@
                                 <input name="titleonly" value="3" type="hidden">
                                 <input type="hidden" name="do" value="search">
                                 <input type="hidden" name="subaction" value="search">
-                                <input id="story" name="findText" value="Поиск" onblur="if(this.value==='') this.value='Поиск';" onfocus="if(this.value==='Поиск') this.value='';" type="text" title="Поиск">
-                                <button class="fbutton2" onclick="submit();" type="submit" title="ok" style="float: right;"><span>ok</span></button>
+                                <input id="story" name="findText" value="Поиск" onblur="if(this.value==='') this.value='Поиск';" onfocus="if(this.value==='Поиск') this.value='';"
+                                       title="Поиск">
+                                <button class="fbutton2" onclick="submit();" title="ok" style="float: right;"><span>ok</span></button>
                             </form>
                         </span>
                     </div>
@@ -86,10 +88,10 @@
                         <div style="display:none; float:left; padding-left: 10px; padding-top: 4px;" id="test">
                             <form method="post" action="<c:url value="/j_spring_security_check"/>">
                                 <label for="j_login">Логин: </label>
-                                <input type="text" name="j_login" id="j_login" style="width: 60px;"/>
+                                <input name="j_login" id="j_login" style="width: 60px;"/>
                                 <label for="j_password">Пароль</label>
                                 <input type="password" name="j_password" id="j_password"  style="width: 60px;"/>&nbsp;
-                                <button class="fbutton2" onclick="submit();" type="submit" title="Войти"><span>Войти</span></button>
+                                <button class="fbutton2" onclick="submit();" title="Войти"><span>Войти</span></button>
                                 <input name="login" type="hidden" id="login" value="submit" />
                             </form>
                         </div>
@@ -125,13 +127,13 @@
                                                     </a>
                                                     <c:out value="${s.notes}"/><br />
                                                     <br/>
-                                                    <b>Год выпуска:</b><a href="/year?code=<c:out value="${s.year.name}"/>/" ><c:out value="${s.year.name}"/></a>
+                                                    <b>Год выпуска:</b><a href="/year?code=<c:out value="${s.year.name}"/>" ><c:out value="${s.year.name}"/></a>
                                                     <br/>
-                                                    <b>Страна:</b> <a href="/country?code=<c:out value="${s.country.code}" />/" ><c:out value="${s.country.name}"/></a>
+                                                    <b>Страна:</b> <a href="/country?code=<c:out value="${s.country.code}" />" ><c:out value="${s.country.name}"/></a>
                                                     <br/>
                                                     <b>Жанр:</b>
                                                     <c:forEach var="genres" items="${s.filmGenres}">
-                                                        <a href="/genre?code<c:out value="${genres.code}"/>/" ><c:out value="${genres.name}"/></a>,
+                                                        <a href="/genre?code=<c:out value="${genres.code}"/>" ><c:out value="${genres.name}"/></a>,
                                                     </c:forEach>
                                                     <br/>
                                                     <b>Качество:</b> <c:out value="${s.qualityStr}"/>
@@ -156,8 +158,16 @@
                                                 <span class="dateicon"  title="Дата">
                                                     <fmt:formatDate value="${s.dateUpload}" pattern="dd.MM.yyyy" />
                                                 </span>
-                                                <span class="editicon"  title="Редактировать"></span>
-                                                </span>
+                                                <c:if test="${userRole == 'ADMIN'}" >
+                                                    <span class="editicon"  title="Удалить">
+                                                        <input type="hidden" id="filmName_<c:out value="${s.code}"/>" value="<c:out value="${s.name}"/>" />
+                                                        <input type="button" id="<c:out value="${s.code}"/>" class="remove_film" value="Удалить фильм" />
+                                                    </span>
+                                                    <span class="editicon"  title="Редактировать">
+                                                        <a href="/editFilm?code=<c:out value="${s.code}"/>"><b>Редактировать</b></a>
+                                                    </span>
+                                                </c:if>
+                                            </span>
                                         </div><!--icons-->
                                     </tr>
                                 </c:forEach>
@@ -276,3 +286,79 @@
         </div><!--wrapper-->
     </body>
 </html>
+
+<script>
+    $(".remove_film").on("click", function (){
+        var filmCode = this.id;
+        var filmName = $("#filmName_"+filmCode).val();
+        if (confirm("Вы действительно хотите удалить фильм '"+filmName+"'?")) {
+            $.ajax({
+                url: "/removeFilm",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    "filmCode": filmCode
+                },
+                error: function () {
+                    alert('ОШИБКА ОТВЕТА СЕРВЕРА!');
+                },
+                success: function (responseData) {
+                    if (typeof(responseData) === "object") {
+                        if (responseData.result){
+                            window.open('?','_self');
+                        } else {
+                            alert(res.message);
+                        }
+                    } else {
+                        if (typeof(responseData) === "string") {
+                            if (responseData === "error"){
+                                alert("Ошибка удаления фильма!")
+                            } else {
+                                window.open('?','_self');
+                            }
+                        } else {
+                            window.open('?','_self');
+                        }
+                    }
+                }
+            });
+        }
+    });
+
+    $(".remove_film").on("click", function (){
+        var filmCode = this.id;
+        var filmName = $("#filmName_"+filmCode).val();
+        if (confirm("Вы действительно хотите удалить фильм '"+filmName+"'?")) {
+            $.ajax({
+                url: "/removeFilm",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    "filmCode": filmCode
+                },
+                error: function () {
+                    alert('ОШИБКА ОТВЕТА СЕРВЕРА!');
+                },
+                success: function (responseData) {
+                    if (typeof(responseData) === "object") {
+                        if (responseData.result){
+                            window.open('?','_self');
+                        } else {
+                            alert(res.message);
+                        }
+                    } else {
+                        if (typeof(responseData) === "string") {
+                            if (responseData === "error"){
+                                alert("Ошибка удаления фильма!")
+                            } else {
+                                window.open('?','_self');
+                            }
+                        } else {
+                            window.open('?','_self');
+                        }
+                    }
+                }
+            });
+        }
+    })
+</script>

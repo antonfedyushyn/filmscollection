@@ -33,8 +33,9 @@
                                 <input name="titleonly" value="3" type="hidden">
                                 <input type="hidden" name="do" value="search">
                                 <input type="hidden" name="subaction" value="search">
-                                <input id="story" name="findText" value="Поиск" onblur="if(this.value==='') this.value='Поиск';" onfocus="if(this.value==='Поиск') this.value='';" type="text" title="Поиск">
-                                <button class="fbutton2" onclick="submit();" type="submit" title="ok" style="float: right;"><span>ok</span></button>
+                                <input id="story" name="findText" value="Поиск" onblur="if(this.value==='') this.value='Поиск';" onfocus="if(this.value==='Поиск') this.value='';"
+                                       title="Поиск">
+                                <button class="fbutton2" onclick="submit();" title="ok" style="float: right;"><span>ok</span></button>
                             </form>
                         </span>
                     </div>
@@ -63,10 +64,10 @@
                         <div style="display:none; float:left; padding-left: 10px; padding-top: 4px;" id="test">
                             <form method="post" action="<c:url value="/j_spring_security_check"/>">
                                 <label for="j_login">Логин: </label>
-                                <input type="text" name="j_login" id="j_login" style="width: 60px;"/>
+                                <input name="j_login" id="j_login" style="width: 60px;"/>
                                 <label for="j_password">Пароль</label>
                                 <input type="password" name="j_password" id="j_password"  style="width: 60px;"/>&nbsp;
-                                <button class="fbutton2" onclick="submit();" type="submit" title="Войти"><span>Войти</span></button>
+                                <button class="fbutton2" onclick="submit();" title="Войти"><span>Войти</span></button>
                                 <input name="login" type="hidden" id="login" value="submit" />
                             </form>
                         </div>
@@ -92,11 +93,11 @@
                                         <tr>
                                             <td width="167" class="label">Логин:</td>
                                             <td width="962">
-                                                <input type="text" name="login" id='loginName' class="f_input"
+                                                <input name="login" id='loginName' class="f_input"
                                                        <c:if test="${login ne null}">
                                                            value="${login}"
                                                        </c:if>
-                                                 title="Логин"/> &nbsp;
+                                                       title="Логин"/> &nbsp;
                                                 <input class="fbutton"  title="Проверить доступность логина для регистрации" onclick="CheckLogin(); return false;" type="button" value="Проверить имя" />
                                                 <div id='result-registration'>
                                                     <c:if test = "${result == false}">
@@ -117,11 +118,11 @@
                                         </tr>
                                         <tr>
                                             <td class="label">Ваш E-Mail:</td>
-                                            <td><input type="text" name="email" id="email" class="f_input"
+                                            <td><input name="email" id="email" class="f_input"
                                                     <c:if test="${email ne null}">
                                                         value="${email}"
                                                     </c:if>
-                                             title="Ваш E-Mail"/></td>
+                                                       title="Ваш E-Mail"/></td>
                                         </tr>
                                     </table>
                                     <c:if test = "${result == false}">
@@ -130,7 +131,7 @@
                                         <br/><br/>
                                     </c:if>
                                     <div class="fieldsubmit"><br><br>
-                                        <button name="submit" class="fbutton" type="submit"><span>Отправить</span></button>
+                                        <button name="submit" class="fbutton"><span>Отправить</span></button>
                                     </div>
                                 </div>
                                 <input name="submit_reg" type="hidden" id="submit_reg" value="submit_reg" />
@@ -150,7 +151,7 @@
                                         <i style="font-size:14px;">Категории</i><br><br>
                                         <div class="film_category">
                                             <c:forEach var="s" items="${genres}">
-                                                <a href="/genre?code=<c:out value="${s.code}" />/"><c:out value="${s.name}" /></a><br>
+                                                <a href="/genre?code=<c:out value="${s.code}" />"><c:out value="${s.name}" /></a><br>
                                             </c:forEach>
                                         </div>
                                     </div>
@@ -163,7 +164,7 @@
                                         <i style="font-size:14px;">По году</i><br><br>
                                         <div class="film_years">
                                             <c:forEach var="s" items="${years}">
-                                                <a href="/year?code=<c:out value="${s.name}" />/"><c:out value="${s.name}" /> года</a><br>
+                                                <a href="/year?code=<c:out value="${s.name}" />"><c:out value="${s.name}" /> года</a><br>
                                             </c:forEach>
                                         </div>
                                         <div class="poloska"></div>
@@ -172,7 +173,7 @@
                                         <i style="font-size:14px;">По странам</i><br><br>
                                         <div class="film_country">
                                             <c:forEach var="s" items="${countries}">
-                                                <a href="/country?code=<c:out value="${s.code}" />/"><c:out value="${s.name}" /></a><br>
+                                                <a href="/country?code=<c:out value="${s.code}" />"><c:out value="${s.name}" /></a><br>
                                             </c:forEach>
                                         </div>
                                     </div>

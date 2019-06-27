@@ -781,7 +781,8 @@
 		}
 
 		if (this.is('animating')) {
-			$.support.transform ? this.animate(stage.x) : this.$stage.stop()
+			// noinspection UnterminatedStatementJS
+            $.support.transform ? this.animate(stage.x) : this.$stage.stop()
 			this.invalidate('position');
 		}
 
@@ -3157,7 +3158,8 @@
 	Navigation.prototype.onTrigger = function(event) {
 		var settings = this._core.settings;
 
-		event.page = {
+		// noinspection JSUndefinedPropertyAssignment
+        event.page = {
 			index: $.inArray(this.current(), this._pages),
 			count: this._pages.length,
 			size: settings && (settings.center || settings.autoWidth || settings.dotsData

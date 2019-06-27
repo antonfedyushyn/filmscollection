@@ -39,8 +39,9 @@
                         <input name="titleonly" value="3" type="hidden">
                         <input type="hidden" name="do" value="search">
                         <input type="hidden" name="subaction" value="search">
-                        <input id="story" name="findText" value="Поиск" onblur="if(this.value==='') this.value='Поиск';" onfocus="if(this.value==='Поиск') this.value='';" type="text" title="Поиск">
-                        <button class="fbutton2" onclick="submit();" type="submit" title="ok" style="float: right;"><span>ok</span></button>
+                        <input id="story" name="findText" value="Поиск" onblur="if(this.value==='') this.value='Поиск';" onfocus="if(this.value==='Поиск') this.value='';"
+                               title="Поиск">
+                        <button class="fbutton2" onclick="submit();" title="ok" style="float: right;"><span>ok</span></button>
                     </form>
                 </span>
             </div>
@@ -69,10 +70,10 @@
                 <div style="display:none; float:left; padding-left: 10px; padding-top: 4px;" id="test">
                     <form method="post" action="<c:url value="/j_spring_security_check"/>">
                         <label for="j_login">Логин: </label>
-                        <input type="text" name="j_login" id="j_login" style="width: 60px;"/>
+                        <input name="j_login" id="j_login" style="width: 60px;"/>
                         <label for="j_password">Пароль</label>
                         <input type="password" name="j_password" id="j_password"  style="width: 60px;"/>&nbsp;
-                        <button class="fbutton2" onclick="submit();" type="submit" title="Войти"><span>Войти</span></button>
+                        <button class="fbutton2" onclick="submit();" title="Войти"><span>Войти</span></button>
                         <input name="login" type="hidden" id="login" value="submit" />
                     </form>
                 </div>
@@ -94,7 +95,7 @@
                             <tr>
                                 <td width="15%" class="label">Год:</td>
                                 <td width="85%" >
-                                    <input type="text" name="filmYear" id="filmYear" style="border: solid 1px #cfcfcf; width: 95%;" value="" title="Год"/> &nbsp;
+                                    <input name="filmYear" id="filmYear" style="border: solid 1px #cfcfcf; width: 95%;" value="" title="Год"/> &nbsp;
                                 </td>
                             </tr>
                             <c:if test = "${result == false}">
@@ -105,7 +106,7 @@
                             <tr>
                                 <td colspan="2" align="center" >
                                     <div class="fieldsubmit"><br><br>
-                                        <button name="submit" class="fbutton" type="submit"><span>Отправить</span></button>
+                                        <button name="submit" class="fbutton"><span>Отправить</span></button>
                                     </div>
                                 </td>
                             </tr>
@@ -127,7 +128,7 @@
                                 <a href="<c:url value="/addGenre"/>" >Добавить новый жанр</a><br>
                                 <a href="<c:url value="/addYear"/>" >Добавить новый год</a><br>
                                 <a href="<c:url value="/addCountry"/>" >Добавить новую страну</a><br>
-                                <a href="<c:url value="/addFilm"/>" >Добавить новый фильм</a><br>
+                                <a href="<c:url value="/admin/addFilm"/>" >Добавить новый фильм</a><br>
                             </div>
                         </div>
                         <div style="padding-top:20px;"></div><!--div-->

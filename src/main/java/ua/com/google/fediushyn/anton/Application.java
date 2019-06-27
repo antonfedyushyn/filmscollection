@@ -99,7 +99,7 @@ public class Application {
                 }
             }
 
-            List<Film> films = filmService.getFilms();
+            /*List<Film> films = filmService.getFilms();
             if ((films == null) || (films.isEmpty())) {
                 FilmCountry filmCountryAdd = filmCountryService.getFilmCountryByCode("usa");
                 List<FilmGenre> filmGenresAdd = new ArrayList<>();
@@ -122,7 +122,7 @@ public class Application {
                             notes, quality, duration, FilmTranslation.UNKNOWN, new Date(), imagePath, "", filmGenresAdd,
                             new FilmDetail(cast + (i + 1), director + (i + 1), pathFilm));
                 }
-            }
+            }*/
         };
     }
 

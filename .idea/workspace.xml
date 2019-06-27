@@ -12,9 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="156db290-7125-4199-9a9f-e250ca824ec2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/Application.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -591,7 +588,7 @@
       <workItem from="1561308376470" duration="43870000" />
       <workItem from="1561495242318" duration="6661000" />
       <workItem from="1561533548244" duration="20058000" />
-      <workItem from="1561557990857" duration="28956000" />
+      <workItem from="1561557990857" duration="29001000" />
     </task>
     <task id="LOCAL-00001" summary="upload images">
       <created>1561393334952</created>
@@ -621,11 +618,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561637380441</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="commit for deploy">
+      <created>1561638140432</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1561638140432</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288069000" />
+    <option name="totallyTimeSpent" value="288114000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -750,7 +754,8 @@
     <MESSAGE value="correct work with movie search" />
     <MESSAGE value="fixed warrnings" />
     <MESSAGE value="ROLE_ADMIN add delete/edit film" />
-    <option name="LAST_COMMIT_MESSAGE" value="ROLE_ADMIN add delete/edit film" />
+    <MESSAGE value="commit for deploy" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit for deploy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

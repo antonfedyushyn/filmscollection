@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+
 public class ConfigProperties {
 
     public static String getPropertyValue(String propertyKey, String defaultValue) {

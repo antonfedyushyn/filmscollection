@@ -10,72 +10,21 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service
-public class FilmCountryService {
+public interface FilmCountryService {
 
-    private final FilmCountryRepository filmCountryRepository;
+    FilmCountry getFilmCountry(String country);
 
-    @Autowired
-    FilmCountryService(FilmCountryRepository filmCountryRepository){
-        this.filmCountryRepository = filmCountryRepository;
-    }
+    FilmCountry getFilmCountryByCode(String countryCode);
 
-    @Transactional(readOnly = true)
-    public FilmCountry getFilmCountry(String country) {
-        return filmCountryRepository.findByName(country);
-    }
+    boolean existsFilmCountry(String country);
 
-    @Transactional(readOnly = true)
-    public FilmCountry getFilmCountryByCode(String countryCode) {
-        return filmCountryRepository.findByCode(countryCode);
-    }
+    List<FilmCountry> getFilmCounrties();
 
-    @Transactional(readOnly = true)
-    public boolean existsFilmCountry(String country) {
-        return filmCountryRepository.existsByName(country);
-    }
+    List<Film> getFilms(String country);
 
-    @Transactional(readOnly = true)
-    public List<FilmCountry> getFilmCounrties() {
-        return filmCountryRepository.findAll();
-    }
+    List<Film> getFilmsByCode(String code);
 
-    @Transactional(readOnly = true)
-    public List<Film> getFilms(String country) {
-        if (!filmCountryRepository.existsByName(country)) return null;
-        FilmCountry filmCountry = filmCountryRepository.findByName(country);
-        return filmCountry.getFilms();
-    }
+    void addFilmCountry(String country, String code) throws FilmException;
 
-    @Transactional(readOnly = true)
-    public List<Film> getFilmsByCode(String code) {
-        if (!filmCountryRepository.existsByCode(code)) return null;
-        FilmCountry filmCountry = filmCountryRepository.findByCode(code);
-        return filmCountry.getFilms();
-    }
-
-    @Transactional
-    public void addFilmCountry(String country, String code) throws FilmException{
-        if (filmCountryRepository.existsByName(country)) {
-            throw new FilmException("Film.country.name.is.exist", "Film country name %s is exist!", country);
-        }
-        if (filmCountryRepository.existsByCode(code)){
-            throw new FilmException("Film.country.code.is.exist", "Film country code %s is exist!", code);
-        }
-        if (country.isEmpty()) {
-            throw new FilmException("Film.county.name.is.empty", "Film country name is empty!");
-        }
-        if (code.isEmpty()) {
-            throw new FilmException("Film.county.code.is.empty", "Film country code is empty!");
-        }
-        FilmCountry filmCountry = new FilmCountry(country, code);
-        filmCountryRepository.save(filmCountry);
-    }
-
-    @Transactional
-    public void deleteFilmCountry(String country) {
-        if (!filmCountryRepository.existsByName(country)) return;
-        filmCountryRepository.deleteByName(country);
-    }
-
+    void deleteFilmCountry(String country);
 }

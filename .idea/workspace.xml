@@ -10,9 +10,159 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/contorllers/AdminController.java" line="324" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="156db290-7125-4199-9a9f-e250ca824ec2" name="Default" comment="commit for deploy">
+    <list default="true" id="156db290-7125-4199-9a9f-e250ca824ec2" name="Default" comment="added services intefaces">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_json_simple_json_simple_1_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmCountryServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmGenreServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmYearServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/UserServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/Application.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/Application.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/CustomSuccessHandler.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/CustomSuccessHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/SecurityConfig.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/SecurityConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/consts/ConfigProperties.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/consts/ConfigProperties.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/consts/UploadProperies.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/consts/UploadProperies.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/contorllers/AdminController.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/contorllers/AdminController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/contorllers/FilmsController.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/contorllers/FilmsController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/contorllers/UploadContorller.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/contorllers/UploadContorller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/exceptions/AddUserException.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/exceptions/AddUserException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/exceptions/FilmException.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/exceptions/FilmException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/locale/LocaleMessages.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/locale/LocaleMessages.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/CustomUser.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/CustomUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/Film.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/Film.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmComment.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmComment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmCountry.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmCountry.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmDetail.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmDetail.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmGenre.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmGenre.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmPage$TypePage.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmPage$TypePage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmPage.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmPage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmQualities.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmQualities.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmTranslation.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmTranslation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmYear.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/FilmYear.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/UserRole.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/model/UserRole.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/props/ConfigProperties.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/props/ConfigProperties.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/repositories/FilmCommentRepository.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/repositories/FilmCommentRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/repositories/FilmCountryRepository.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/repositories/FilmCountryRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/repositories/FilmDetailRepository.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/repositories/FilmDetailRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/repositories/FilmGenreRepository.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/repositories/FilmGenreRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/repositories/FilmRepository.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/repositories/FilmRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/repositories/FilmYearRepository.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/repositories/FilmYearRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/repositories/UserRepository.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/repositories/UserRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/service/FilmCountryService.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/service/FilmCountryService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/service/FilmGenreService.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/service/FilmGenreService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/service/FilmService.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/service/FilmService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/service/FilmYearService.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/service/FilmYearService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/service/SecurityService.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/service/SecurityService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/service/SecurityServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/service/SecurityServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/service/UserDetailsServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/service/UserDetailsServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/service/UserService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/upload/UploadExceptions.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/upload/UploadExceptions.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/upload/UploadFile.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/upload/UploadFile.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/upload/UploadFiles.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/google/fediushyn/anton/upload/UploadFiles.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENSE" afterPath="$PROJECT_DIR$/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filmscollection.iml" afterPath="$PROJECT_DIR$/filmscollection.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/Application.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/Application.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/CustomSuccessHandler.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/CustomSuccessHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/SecurityConfig.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/SecurityConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/consts/ConfigProperties.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/consts/ConfigProperties.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/consts/UploadProperies.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/consts/UploadProperies.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/contorllers/AdminController.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/contorllers/AdminController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/contorllers/FilmsController.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/contorllers/FilmsController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/contorllers/UploadContorller.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/contorllers/UploadContorller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/exceptions/AddUserException.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/exceptions/AddUserException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/exceptions/FilmException.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/exceptions/FilmException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/locale/LocaleMessages.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/locale/LocaleMessages.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/CustomUser.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/CustomUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/Film.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/Film.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmComment.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmComment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmCountry.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmCountry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmDetail.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmDetail.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmGenre.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmGenre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmPage.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmQualities.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmQualities.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmTranslation.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmTranslation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmYear.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmYear.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/UserRole.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/UserRole.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/props/ConfigProperties.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/props/ConfigProperties.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmCommentRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmCommentRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmCountryRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmCountryRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmDetailRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmDetailRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmGenreRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmGenreRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmYearRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmYearRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/UserRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmCountryService.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmCountryService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmGenreService.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmGenreService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmService.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmYearService.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmYearService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/SecurityService.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/SecurityService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/SecurityServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/SecurityServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/UserDetailsServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/UserDetailsServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/upload/UploadExceptions.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/upload/UploadExceptions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/upload/UploadFile.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/upload/UploadFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/upload/UploadFiles.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/upload/UploadFiles.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages/messages.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages/messages.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages/messages_ru.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages/messages_ru.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages/messages_ru_RU.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages/messages_ru_RU.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addCountry.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addCountry.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addFilm.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addFilm.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addGenre.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addGenre.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addYear.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addYear.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/editFilm.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/editFilm.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/film.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/film.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/unauthorized.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/unauthorized.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/css/animate.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/css/animate.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/css/docs.theme.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/css/docs.theme.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/js/app.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/js/foundation.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/js/foundation.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/README.md" afterPath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/assets/owl.theme.green.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/assets/owl.theme.green.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/assets/owl.theme.green.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/assets/owl.theme.green.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/owl.carousel.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/owl.carousel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/owl.carousel.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/owlcarousel/owl.carousel.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/vendors/foundation.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/vendors/foundation.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/vendors/jquery.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/vendors/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/vendors/jquery.mousewheel.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/OwlCarousel2/assets/vendors/jquery.mousewheel.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/engine.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/engine.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/styles_admin.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/styles_admin.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-full.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-full.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-full.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-full.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-full.packed.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-full.packed.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-ie6.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-ie6.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-with-gallery.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-with-gallery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-with-gallery.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-with-gallery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-with-gallery.packed.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-with-gallery.packed.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-with-html.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-with-html.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-with-html.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-with-html.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-with-html.packed.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide-with-html.packed.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide.packed.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/highslide/highslide.packed.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/playerjs10.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/playerjs10.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/playerjs2.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/playerjs2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/players/playerjs10.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/players/playerjs10.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" afterPath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/config.properties" afterPath="$PROJECT_DIR$/target/classes/config.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/messages/messages.properties" afterPath="$PROJECT_DIR$/target/classes/messages/messages.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/messages/messages_ru.properties" afterPath="$PROJECT_DIR$/target/classes/messages/messages_ru.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/messages/messages_ru_RU.properties" afterPath="$PROJECT_DIR$/target/classes/messages/messages_ru_RU.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,41 +178,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <file leaf-file-name="FilmYearService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmYearService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="70" lean-forward="false" selection-start-line="1" selection-start-column="70" selection-end-line="1" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="73" column="14" lean-forward="true" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FilmCountryRepository.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmCountryRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="308">
+              <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,11 +190,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FilmCommentRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmCommentRepository.java">
+      <file leaf-file-name="FilmService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+            <state relative-caret-position="88">
+              <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,11 +202,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FilmDetailRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmDetailRepository.java">
+      <file leaf-file-name="FilmCountryService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmCountryService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            <state relative-caret-position="440">
+              <caret line="28" column="43" lean-forward="false" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,23 +214,75 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostgreSQLDialect.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.9.Final/hibernate-core-5.3.9.Final.jar!/org/hibernate/dialect/PostgreSQLDialect.class">
+      <file leaf-file-name="FilmCountryServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmCountryServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="58" lean-forward="false" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="58" />
+            <state relative-caret-position="286">
+              <caret line="13" column="65" lean-forward="false" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
               <folding>
-                <element signature="e#0#271#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/Application.java">
+      <file leaf-file-name="UploadExceptions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/upload/UploadExceptions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="99" column="12" lean-forward="false" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="12" />
+            <state relative-caret-position="184">
+              <caret line="33" column="4" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FilmPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FilmDetail.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmDetail.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="80" column="4" lean-forward="false" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FilmYearServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmYearServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="53" column="20" lean-forward="false" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UploadFiles.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/upload/UploadFiles.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="200" column="19" lean-forward="false" selection-start-line="200" selection-start-column="19" selection-end-line="200" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="153" column="57" lean-forward="false" selection-start-line="153" selection-start-column="57" selection-end-line="153" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -121,20 +293,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
         <option value="JavaScript File" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Object principal</find>
-      <find>icon</find>
-      <find>editicon</find>
-      <find>uploadVideoFile</find>
-      <find>/uploadVideoFile</find>
       <find>/deleteFile</find>
       <find>scrip</find>
       <find>len</find>
@@ -160,6 +327,11 @@
       <find>fbutton</find>
       <find>com.googlecode.json</find>
       <find>com.sun</find>
+      <find>simple</find>
+      <find>AddUserException</find>
+      <find>Enum</find>
+      <find>enum</find>
+      <find>model</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -173,17 +345,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/SecurityServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/upload/UploadExceptions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/exceptions/AddUserException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/exceptions/FilmException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmCountry.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmGenre.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmYear.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmPage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/CustomSuccessHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/messages/messages_ru.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/messages/messages_ru_RU.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/messages/messages.properties" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/upload/UploadFiles.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" />
@@ -192,23 +353,19 @@
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/engine.css" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/locale/LocaleMessages.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/unauthorized.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmYearService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmYearRepository.java" />
         <option value="$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/2.1.6.RELEASE/spring-data-jpa-2.1.6.RELEASE.jar!/org/springframework/data/jpa/repository/JpaRepository.class" />
         <option value="$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.1.6.RELEASE/spring-data-commons-2.1.6.RELEASE.jar!/org/springframework/data/repository/Repository.class" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmGenreRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/UserRepository.java" />
         <option value="$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.1.6.RELEASE/spring-aop-5.1.6.RELEASE.jar!/org/springframework/aop/framework/CglibAopProxy.class" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/contorllers/FilmsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/contorllers/UploadContorller.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmDetail.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmService.java" />
         <option value="$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-jasper/9.0.17/tomcat-embed-jasper-9.0.17.jar!/org/apache/jasper/el/JasperELResolver.class" />
         <option value="$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-el/9.0.17/tomcat-embed-el-9.0.17.jar!/org/apache/el/parser/AstValue.class" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/contorllers/AdminController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addCountry.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addYear.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addGenre.jsp" />
@@ -220,10 +377,25 @@
         <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/Film.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/Application.java" />
         <option value="$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.9.Final/hibernate-core-5.3.9.Final.jar!/org/hibernate/dialect/PostgreSQLDialect.class" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmCountryRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/consts/UploadProperies.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmDetailRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/props/ConfigProperties.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/contorllers/AdminController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/contorllers/FilmsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmYearServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmYearService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmGenreServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmGenreService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmCountryService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmCountryServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -259,8 +431,29 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="films-collection" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="films-collection" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="films-collection" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="21" />
+    <option name="x" value="485" />
     <option name="width" value="1022" />
     <option name="height" value="728" />
   </component>
@@ -311,137 +504,70 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="filmscollection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="filmscollection" type="462c0819:PsiDirectoryNode" />
+              <item name="filmscollectionmsq" type="b2602c69:ProjectViewProjectNode" />
+              <item name="filmscollectionmsq" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="filmscollection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="filmscollection" type="462c0819:PsiDirectoryNode" />
+              <item name="filmscollectionmsq" type="b2602c69:ProjectViewProjectNode" />
+              <item name="filmscollectionmsq" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="filmscollection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="filmscollection" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="filmscollection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="filmscollection" type="462c0819:PsiDirectoryNode" />
+              <item name="filmscollectionmsq" type="b2602c69:ProjectViewProjectNode" />
+              <item name="filmscollectionmsq" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="filmscollection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="filmscollection" type="462c0819:PsiDirectoryNode" />
+              <item name="filmscollectionmsq" type="b2602c69:ProjectViewProjectNode" />
+              <item name="filmscollectionmsq" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="anton" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="filmscollection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="filmscollection" type="462c0819:PsiDirectoryNode" />
+              <item name="filmscollectionmsq" type="b2602c69:ProjectViewProjectNode" />
+              <item name="filmscollectionmsq" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="anton" type="462c0819:PsiDirectoryNode" />
-              <item name="contorllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="filmscollection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="filmscollection" type="462c0819:PsiDirectoryNode" />
+              <item name="filmscollectionmsq" type="b2602c69:ProjectViewProjectNode" />
+              <item name="filmscollectionmsq" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="anton" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="filmscollection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="filmscollection" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="anton" type="462c0819:PsiDirectoryNode" />
-              <item name="repositories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="filmscollection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="filmscollection" type="462c0819:PsiDirectoryNode" />
+              <item name="filmscollectionmsq" type="b2602c69:ProjectViewProjectNode" />
+              <item name="filmscollectionmsq" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="filmscollection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="filmscollection" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="messages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="filmscollection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="filmscollection" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="messages" type="462c0819:PsiDirectoryNode" />
-              <item name="Resource Bundle 'messages'" type="a6c14932:ResourceBundleNode" />
-            </path>
-            <path>
-              <item name="filmscollection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="filmscollection" type="462c0819:PsiDirectoryNode" />
+              <item name="filmscollectionmsq" type="b2602c69:ProjectViewProjectNode" />
+              <item name="filmscollectionmsq" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="filmscollection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="filmscollection" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="filmscollection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="filmscollection" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="filmscollection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="filmscollection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: com.jayway.jsonpath:json-path:2.4.0" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="filmscollection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: com.jayway.jsonpath:json-path:2.4.0" type="70bed36:NamedLibraryElementNode" />
-              <item name="json-path-2.4.0.jar" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -449,7 +575,7 @@
     <property name="nodejs_interpreter_path" value="C:/Server/bin/NodeJS/node" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15479723" />
     <property name="project.structure.side.proportion" value="0.34051222" />
     <property name="node.js.path.for.package.stylelint" value="project" />
@@ -477,6 +603,7 @@
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.standard" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -630,6 +757,11 @@
       <workItem from="1561495242318" duration="6661000" />
       <workItem from="1561533548244" duration="20058000" />
       <workItem from="1561557990857" duration="30295000" />
+      <workItem from="1561659555079" duration="1569000" />
+      <workItem from="1564998868376" duration="4106000" />
+      <workItem from="1565643278241" duration="211000" />
+      <workItem from="1565728181016" duration="994000" />
+      <workItem from="1573746258786" duration="9920000" />
     </task>
     <task id="LOCAL-00001" summary="upload images">
       <created>1561393334952</created>
@@ -691,7 +823,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="289408000" />
+    <option name="totallyTimeSpent" value="306208000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -704,12 +836,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43888888" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -723,12 +853,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="combo" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2588889" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43888888" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27238807" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14392324" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -737,6 +867,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -828,7 +959,8 @@
     <MESSAGE value="fixed warrnings" />
     <MESSAGE value="ROLE_ADMIN add delete/edit film" />
     <MESSAGE value="commit for deploy" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit for deploy" />
+    <MESSAGE value="added services intefaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="added services intefaces" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -859,7 +991,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/props/ConfigProperties.java</url>
-          <line>9</line>
+          <line>10</line>
           <properties />
           <option name="timeStamp" value="30" />
         </line-breakpoint>
@@ -991,54 +1123,33 @@
     <select />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/2.1.6.RELEASE/spring-data-jpa-2.1.6.RELEASE.jar!/org/springframework/data/jpa/repository/JpaRepository.class">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/film.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        <state relative-caret-position="30">
+          <caret line="316" column="47" lean-forward="false" selection-start-line="316" selection-start-column="47" selection-end-line="316" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.1.6.RELEASE/spring-data-commons-2.1.6.RELEASE.jar!/org/springframework/data/repository/Repository.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.9.Final/hibernate-core-5.3.9.Final.jar!/org/hibernate/dialect/PostgreSQLDialect.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="132">
+          <caret line="9" column="58" lean-forward="false" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.1.6.RELEASE/spring-data-commons-2.1.6.RELEASE.jar!/org/springframework/data/repository/CrudRepository.class">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="10" column="49" lean-forward="true" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+        <state relative-caret-position="396">
+          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/UserRepository.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.9.Final/hibernate-core-5.3.9.Final-sources.jar!/org/hibernate/dialect/PostgreSQLDialect.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmGenreRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmYearRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1050,36 +1161,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmCountryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="57" column="16" lean-forward="false" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
-          <folding>
-            <element signature="e#1318#1319#0" expanded="false" />
-            <element signature="e#1372#1373#0" expanded="false" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/img/filmcollection.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmYearService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addCountry.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="45" column="16" lean-forward="false" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+        <state relative-caret-position="682">
+          <caret line="31" column="91" lean-forward="false" selection-start-line="31" selection-start-column="91" selection-end-line="31" selection-end-column="91" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.1.6.RELEASE/spring-aop-5.1.6.RELEASE.jar!/org/springframework/aop/framework/CglibAopProxy.class">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="486" column="0" lean-forward="false" selection-start-line="486" selection-start-column="0" selection-end-line="486" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="73" column="36" lean-forward="false" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/UserService.java">
+    <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="814">
+          <caret line="47" column="24" lean-forward="false" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/CustomSuccessHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/upload/UploadFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmDetailRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmCountryRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="49" lean-forward="false" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/props/ConfigProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmCommentRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/Film.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmGenre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1092,357 +1282,269 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/SecurityServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/exceptions/AddUserException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        <state relative-caret-position="44">
+          <caret line="2" column="43" lean-forward="true" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/CustomUser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/exceptions/FilmException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.1.6.RELEASE/spring-context-5.1.6.RELEASE-sources.jar!/org/springframework/ui/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmYear.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.5.RELEASE/spring-security-core-5.1.5.RELEASE.jar!/org/springframework/security/core/userdetails/User.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmQualities.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="35" column="46" lean-forward="false" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/img/viewmore.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/upload/UploadFiles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="44">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/contorllers/UploadContorller.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/consts/UploadProperies.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1408">
-          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+        <state relative-caret-position="412">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_66/src.zip!/java/util/List.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/consts/ConfigProperties.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="237" column="12" lean-forward="false" selection-start-line="237" selection-start-column="12" selection-end-line="237" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmGenre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/messages/messages.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_66/jre/lib/rt.jar!/sun/reflect/DelegatingMethodAccessorImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.6.RELEASE/spring-web-5.1.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="90" column="16" lean-forward="false" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="16" />
-          <folding>
-            <element signature="e#952#953#0" expanded="true" />
-            <element signature="e#1006#1007#0" expanded="true" />
-            <element signature="e#3024#3025#0" expanded="true" />
-            <element signature="e#3065#3066#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-jasper/9.0.17/tomcat-embed-jasper-9.0.17.jar!/org/apache/jasper/el/JasperELResolver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-el/9.0.17/tomcat-embed-el-9.0.17.jar!/org/apache/el/parser/AstValue.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/CustomSuccessHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/contorllers/FilmsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="217" column="57" lean-forward="true" selection-start-line="217" selection-start-column="57" selection-end-line="217" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="122" column="63" lean-forward="false" selection-start-line="122" selection-start-column="63" selection-end-line="122" selection-end-column="63" />
+        <state relative-caret-position="132">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/contorllers/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state relative-caret-position="571">
+          <caret line="236" column="58" lean-forward="false" selection-start-line="236" selection-start-column="58" selection-end-line="236" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/SecurityConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/contorllers/UploadContorller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="571">
+          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/SecurityServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.5.RELEASE/spring-security-core-5.1.5.RELEASE-sources.jar!/org/springframework/security/core/userdetails/UserDetailsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/UserDetailsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="16" column="55" lean-forward="false" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/contorllers/FilmsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
-          <caret line="47" column="24" lean-forward="false" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
+          <caret line="4" column="52" lean-forward="false" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/AJAX.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/SecurityService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        <state relative-caret-position="44">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/Film.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="185" column="9" lean-forward="true" selection-start-line="185" selection-start-column="9" selection-end-line="185" selection-end-column="9" />
+        <state relative-caret-position="44">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="12" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_66/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/editFilm.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="422" column="33" lean-forward="false" selection-start-line="422" selection-start-column="33" selection-end-line="422" selection-end-column="33" />
+        <state relative-caret-position="330">
+          <caret line="15" column="51" lean-forward="false" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
           <folding>
-            <element signature="n#style#0;n#button#0;n#form#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmGenreServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="153" column="57" lean-forward="false" selection-start-line="153" selection-start-column="57" selection-end-line="153" selection-end-column="57" />
+        <state relative-caret-position="286">
+          <caret line="53" column="61" lean-forward="false" selection-start-line="53" selection-start-column="61" selection-end-line="53" selection-end-column="61" />
           <folding>
-            <element signature="n#style#0;n#button#0;n#form#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addGenre.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmGenreService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="111" column="57" lean-forward="true" selection-start-line="111" selection-start-column="57" selection-end-line="111" selection-end-column="57" />
+        <state relative-caret-position="550">
+          <caret line="25" column="69" lean-forward="true" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="69" />
           <folding>
-            <element signature="n#style#0;n#button#0;n#form#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addYear.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="107" column="69" lean-forward="true" selection-start-line="107" selection-start-column="69" selection-end-line="107" selection-end-column="69" />
+        <state relative-caret-position="88">
+          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="16" />
           <folding>
-            <element signature="n#style#0;n#button#0;n#form#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#1;n#tr#1;n#table#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addCountry.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmYearService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmCountryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="28" column="43" lean-forward="false" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmCountryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="65" lean-forward="false" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/upload/UploadExceptions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="119" column="57" lean-forward="true" selection-start-line="119" selection-start-column="57" selection-end-line="119" selection-end-column="57" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#form#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <caret line="33" column="4" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/model/FilmDetail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state relative-caret-position="191">
+          <caret line="80" column="4" lean-forward="false" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addFilm.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/service/FilmYearServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="417" column="33" lean-forward="false" selection-start-line="417" selection-start-column="33" selection-end-line="417" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#form#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#c:if#2;n#jsp:root#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#td#3;n#tr#7;n#table#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="349" column="51" lean-forward="false" selection-start-line="349" selection-start-column="51" selection-end-line="349" selection-end-column="51" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#form#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/film.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="316" column="47" lean-forward="false" selection-start-line="316" selection-start-column="47" selection-end-line="316" selection-end-column="47" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#form#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="99" column="12" lean-forward="false" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.9.Final/hibernate-core-5.3.9.Final.jar!/org/hibernate/dialect/PostgreSQLDialect.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="58" lean-forward="false" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#271#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="70" lean-forward="false" selection-start-line="1" selection-start-column="70" selection-end-line="1" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="73" column="14" lean-forward="true" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmCommentRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        <state relative-caret-position="191">
+          <caret line="53" column="20" lean-forward="false" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmDetailRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/upload/UploadFiles.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="191">
+          <caret line="200" column="19" lean-forward="false" selection-start-line="200" selection-start-column="19" selection-end-line="200" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/google/fediushyn/anton/repositories/FilmCountryRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="191">
+          <caret line="153" column="57" lean-forward="false" selection-start-line="153" selection-start-column="57" selection-end-line="153" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>

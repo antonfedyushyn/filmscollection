@@ -344,18 +344,7 @@
                 contentType: false,
                 cache: false,
                 success: function (responseData) {
-                    var res;
-                    if (typeof(responseData) === "object") {
-                        res = responseData;
-                    } else {
-                        try {
-                            res = JSON.parse(responseData);
-                        } catch(err) {
-                            window.open('/','_self');
-                            return;
-                        }
-                    }
-                    if (res.result) {
+                    if (responseData.result) {
                         $("#posterFile").attr("src", res.path);
                         $("#posterFilePath").val(res.path);
                         $("#posterFilePathShow").val(res.path);
@@ -371,8 +360,8 @@
                             });
                         }
                     } else {
-                        if ((!(res.resMessage === null)) && (!(res.resMessage === undefined))) {
-                            alert(res.resMessage);
+                        if ((!(responseData.message === null)) && (!(responseData.message === undefined))) {
+                            alert(responseData.message);
                         }
                     }
                 },
@@ -398,21 +387,10 @@
                 contentType: false,
                 cache: false,
                 success: function (responseData) {
-                    var res;
-                    if (typeof(responseData) === "object") {
-                        res = responseData;
+                    if (responseData.result) {
+                        $("#screenShoots").val(responseData.filesPathes);
                     } else {
-                        try {
-                            res = JSON.parse(responseData);
-                        } catch(err) {
-                            window.open('/','_self');
-                            return;
-                        }
-                    }
-                    if (res.result) {
-                        $("#screenShoots").val(res.filesPathes);
-                    } else {
-                        alert(res.resMessage);
+                        alert(responseData.message);
                     }
                 },
                 error: function () {
@@ -445,27 +423,16 @@
                 contentType: false,
                 cache: false,
                 success: function (responseData) {
-                    var res;
-                    if (typeof(responseData) === "object") {
-                        res = responseData;
-                    } else {
-                        try {
-                            res = JSON.parse(responseData);
-                        } catch(err) {
-                            window.open('/','_self');
-                            return;
-                        }
-                    }
-                    if (res.result) {
-                        $("#filmPath").val(res.path);
-                        $("#filmVideoFileName").val(res.fileName);
+                    if (responseData.result) {
+                        $("#filmPath").val(responseData.path);
+                        $("#filmVideoFileName").val(responseData.fileName);
                         $(".uploadVideo").hide();
                         $("#filmPath").show();
                         $("#filmVideoFileName").show();
                         $('#addFilmVideo').show();
                     } else {
-                        if ((!(res.resMessage === null)) && (!(res.resMessage === undefined))) {
-                            alert(res.resMessage);
+                        if ((!(responseData.message === null)) && (!(responseData.message === undefined))) {
+                            alert(responseData.message);
                             $(".uploadVideo").hide();
                             $("#filmPath").show();
                             $("#filmVideoFileName").show();

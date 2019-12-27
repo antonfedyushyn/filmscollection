@@ -1,14 +1,11 @@
 package ua.com.google.fediushyn.anton.contorllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.configurationprocessor.json.JSONException;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
-import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import ua.com.google.fediushyn.anton.DTO.ResponseDelete;
 import ua.com.google.fediushyn.anton.exceptions.FilmException;
-import ua.com.google.fediushyn.anton.locale.LocaleMessages;
 import ua.com.google.fediushyn.anton.model.*;
 import ua.com.google.fediushyn.anton.service.*;
 
@@ -39,6 +36,7 @@ public class AdminController {
         this.filmService = filmService;
         this.filmsController = filmsController;
     }
+
 
     private final static int pageSize = 10;
 
@@ -331,7 +329,7 @@ public class AdminController {
 
     @PostMapping(value = "/removeFilm")
     @ResponseBody
-    public String setCountryFilm(@RequestParam(name = "filmCode") String filmCode) {
+    public ResponseDelete deleteFilm(@RequestParam(name = "filmCode") String filmCode) {
         Boolean result = true;
         String resMessage = "";
         Film film = filmService.getFilmByCode(filmCode);
@@ -344,18 +342,7 @@ public class AdminController {
                 resMessage = filmsController.getLocaleMessage(e.getMessage(), e.getMessageDefault());
             }
         }
-        JSONObject json = new JSONObject();
-        try{
-            json.put("result", result);
-            json.put("message", resMessage);
-            resMessage = json.toString();
-        } catch (JSONException e){
-            if (result) {
-                resMessage = "ok";
-            } else {
-                resMessage = "error";
-            }
-        }
-        return resMessage;
+
+        return new ResponseDelete(result, resMessage);
     }
 }

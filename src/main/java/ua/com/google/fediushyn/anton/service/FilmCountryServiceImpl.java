@@ -37,7 +37,7 @@ public class FilmCountryServiceImpl implements FilmCountryService{
 
     @Transactional(readOnly = true)
     public List<FilmCountry> getFilmCounrties() {
-        return filmCountryRepository.findAll();
+        return filmCountryRepository.findAllByOrderByName();
     }
 
     @Transactional(readOnly = true)
@@ -75,6 +75,6 @@ public class FilmCountryServiceImpl implements FilmCountryService{
     @Transactional
     public void deleteFilmCountry(String country) {
         if (!filmCountryRepository.existsByName(country)) return;
-        filmCountryRepository.deleteByName(country);
+        filmCountryRepository.deleteFilmCountryByName(country);
     }
 }

@@ -354,22 +354,22 @@
                 url: "/uploadPosterFile",
                 type: "POST",
                 enctype: 'multipart/form-data',
+                dataType: 'json',
                 data: data,
                 processData: false,
                 contentType: false,
                 cache: false,
                 success: function (responseData) {
-                    var res;
-                    if (typeof(responseData) === "object") {
-                        res = responseData;
-                    } else {
-                        res = JSON.parse(responseData);
-                    }
-                    if (res.result) {
-                        $("#posterFile").attr("src", res.path);
-                        $("#posterFilePath").val(res.path);
-                        $("#posterFilePathShow").val(res.path);
-                        $("#posterFileName").val(res.fileName);
+                    alert(responseData);
+                    alert(JSON.stringify(responseData));
+                    if (responseData.result) {
+                        alert('res.path: '+responseData.path);
+                        alert('res.name: '+responseData.fileName);
+                        alert('res.message: '+responseData.message);
+                        $("#posterFile").attr("src", responseData.path);
+                        $("#posterFilePath").val(responseData.path);
+                        $("#posterFilePathShow").val(responseData.path);
+                        $("#posterFileName").val(responseData.fileName);
                         if (oldFileName.length > 0) {
                             $.ajax({
                                 url: "/deleteFile",
@@ -381,8 +381,11 @@
                             });
                         }
                     } else {
-                        if ((!(res.resMessage === null)) && (!(res.resMessage === undefined))) {
-                            alert(res.resMessage);
+                        alert('res.path: '+responseData.path);
+                        alert('res.name: '+responseData.fileName);
+                        alert('res.message: '+responseData.message);
+                        if ((!(responseData.message === null)) && (!(responseData.message === undefined))) {
+                            alert(responseData.message);
                         }
                     }
                 },
@@ -408,16 +411,10 @@
                 contentType: false,
                 cache: false,
                 success: function (responseData) {
-                    var res;
-                    if (typeof(responseData) === "object") {
-                        res = responseData;
+                    if (responseData.result) {
+                        $("#screenShoots").val(responseData.filesPathes);
                     } else {
-                        res = JSON.parse(responseData);
-                    }
-                    if (res.result) {
-                        $("#screenShoots").val(res.filesPathes);
-                    } else {
-                        alert(res.resMessage);
+                        alert(responseData.message);
                     }
                 },
                 error: function () {
@@ -450,21 +447,16 @@
                 contentType: false,
                 cache: false,
                 success: function (responseData) {
-                    var res;
-                    if (typeof(responseData) === "object") {
-                        res = responseData;
-                    } else {
-                        res = JSON.parse(responseData);
-                    }if (res.result) {
-                        $("#filmPath").val(res.path);
-                        $("#filmVideoFileName").val(res.fileName);
+                    if (responseData.result) {
+                        $("#filmPath").val(responseData.path);
+                        $("#filmVideoFileName").val(responseData.fileName);
                         $(".uploadVideo").hide();
                         $("#filmPath").show();
                         $("#filmVideoFileName").show();
                         $('#addFilmVideo').show();
                     } else {
-                        if ((!(res.resMessage === null)) && (!(res.resMessage === undefined))) {
-                            alert(res.resMessage);
+                        if ((!(responseData.message === null)) && (!(responseData.message === undefined))) {
+                            alert(responseData.message);
                             $(".uploadVideo").hide();
                             $("#filmPath").show();
                             $("#filmVideoFileName").show();

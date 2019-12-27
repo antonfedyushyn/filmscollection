@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @PropertySource("classpath:application.properties")
+@PropertySource("classpath:config.properties")
 public class ConfigProperties {
 
     private final Environment env;

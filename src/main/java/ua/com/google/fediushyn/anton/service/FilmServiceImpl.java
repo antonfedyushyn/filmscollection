@@ -34,7 +34,7 @@ public class FilmServiceImpl implements FilmService{
 
     @Transactional(readOnly = true)
     public Film getFilmByID(Long idFilm) {
-        return filmRepository.findFilmById(idFilm);
+        return filmRepository.findFilmByIdOOrderByDateUploadAndIDDesc(idFilm);
     }
 
     @Transactional(readOnly = true)

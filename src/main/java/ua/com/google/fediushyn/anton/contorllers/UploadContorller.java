@@ -1,8 +1,6 @@
 package ua.com.google.fediushyn.anton.contorllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.configurationprocessor.json.JSONException;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -11,7 +9,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import ua.com.google.fediushyn.anton.DTO.ResponseDelete;
+import ua.com.google.fediushyn.anton.DTO.ResponseUploadFile;
+import ua.com.google.fediushyn.anton.DTO.ResponseUploadFiles;
 import ua.com.google.fediushyn.anton.consts.ConfigProperties;
+import ua.com.google.fediushyn.anton.consts.UploadProperies;
 import ua.com.google.fediushyn.anton.upload.UploadExceptions;
 import ua.com.google.fediushyn.anton.upload.UploadFiles;
 
@@ -24,25 +26,26 @@ import java.util.List;
 @Controller
 public class UploadContorller {
     private final FilmsController filmsController;
-    private final ConfigProperties configProp;
+    private final UploadProperies uploadProperies;
 
     @Autowired
     UploadContorller(FilmsController filmsController,
-                     ConfigProperties configProp){
+                     UploadProperies uploadProperies){
         this.filmsController = filmsController;
-        this.configProp = configProp;
+        this.uploadProperies = uploadProperies;
     }
 
     @PostMapping("/uploadPosterFile")
     @ResponseBody
-    public String uploadPosterFile(@RequestParam("posterFile") MultipartFile file) {
+    public ResponseUploadFile uploadPosterFile(@RequestParam("posterFile") MultipartFile file) {
 
         Boolean result = false;
         String resMessage;
         String fileName = "";
+        String filePath;
 
 
-        UploadFiles upload = new UploadFiles();
+        UploadFiles upload = new UploadFiles(uploadProperies);
         try {
             fileName = upload.uploadSingleImageFile(file, true);
             result = true;
@@ -52,28 +55,21 @@ public class UploadContorller {
             resMessage = filmsController.getLocaleMessage(e.getMessage(), e.getDefaultMessage(), e.getFileName());
         }
 
-        JSONObject json = new JSONObject();
-        try {
-            json.put("result", result);
-            json.put("resMessage", resMessage);
-            json.put("path", "/imageFile?fileName="+fileName);
-            json.put("fileName", fileName);
-            resMessage = json.toString();
-        } catch (JSONException e) {
-            resMessage = "";
-        }
-        return resMessage;
+        filePath = "/imageFile/"+fileName;
+
+        return new ResponseUploadFile(result, resMessage, filePath, fileName);
     }
 
     @PostMapping("/uploadImageFiles")
     @ResponseBody
-    public String uploadImageFiles(@RequestParam("imageFiles") MultipartFile[] file) {
+    public ResponseUploadFiles uploadImageFiles(@RequestParam("imageFiles") MultipartFile[] file) {
 
         Boolean result = false;
         String resMessage;
         List<String> filesName = null;
+        List<String> filesPathes = new ArrayList<>();
 
-        UploadFiles upload = new UploadFiles();
+        UploadFiles upload = new UploadFiles(uploadProperies);
         try {
             filesName = upload.uploadMultiImageFiles(file);
             result = true;
@@ -83,34 +79,25 @@ public class UploadContorller {
             resMessage = filmsController.getLocaleMessage(e.getMessage(), e.getDefaultMessage(), e.getFileName());
         }
 
-        JSONObject json = new JSONObject();
-        try {
-            json.put("result", result);
-            json.put("resMessage", resMessage);
-            if (result) {
-                List<String> filePathes = new ArrayList<>();
-                for (String filePath: filesName) {
-                    filePathes.add("/imageFile?fileName="+filePath);
-                }
-                json.put("filesPathes", String.join(",", filePathes));
-                json.put("countFiles", file.length);
+        if (!filesName.isEmpty()) {
+            for (String filePath : filesName) {
+                filesPathes.add("/imageFile/" + filePath);
             }
-            resMessage = json.toString();
-        } catch (JSONException e) {
-            resMessage = "";
         }
-        return resMessage;
+
+        return new ResponseUploadFiles(result, resMessage, String.join(",", filesPathes), file.length);
     }
 
     @PostMapping("/uploadVideoFile")
     @ResponseBody
-    public String uploadVideoFile(@RequestParam("videoFile") MultipartFile file) {
+    public ResponseUploadFile uploadVideoFile(@RequestParam("videoFile") MultipartFile file) {
 
         Boolean result = false;
         String resMessage;
         String fileName = "";
+        String pathFile;
 
-        UploadFiles upload = new UploadFiles();
+        UploadFiles upload = new UploadFiles(uploadProperies);
         try {
             fileName = upload.uploadVideoFile(file);
             result = true;
@@ -120,54 +107,36 @@ public class UploadContorller {
             resMessage = filmsController.getLocaleMessage(e.getMessage(), e.getDefaultMessage(), e.getFileName());
         }
 
-        JSONObject json = new JSONObject();
-        try {
-            json.put("result", result);
-            json.put("resMessage", resMessage);
-            json.put("path", "/videosrc?fileName="+fileName);
-            json.put("fileName", fileName);
-            resMessage = json.toString();
-        } catch (JSONException e) {
-            resMessage = "";
-        }
-        return resMessage;
+        pathFile = "/videosrc/"+fileName;
+
+        return new ResponseUploadFile(result, resMessage, pathFile, fileName);
     }
 
-    @GetMapping(value = "/imageFile")
-    public ResponseEntity<byte[]> getImageFile(@RequestParam(name="fileName") String fileName) {
+    @GetMapping(value = "/imageFile/{name}")
+    public ResponseEntity<byte[]> getImageFile(@PathVariable("name") String fileName) {
         byte[] imageContext = null;
-        HttpStatus status = HttpStatus.CREATED;
+        HttpStatus status = HttpStatus.OK;
+        UploadFiles uploadFiles = new UploadFiles(uploadProperies);
         try{
-            imageContext = (new UploadFiles()).getImageFile(fileName);
+            imageContext = uploadFiles.getImageFile(fileName);
         } catch (UploadExceptions e){
             status = HttpStatus.INTERNAL_SERVER_ERROR;
         }
-        String ext;
-        File f = new File(configProp.getConfigValue("directory.upload.files") + File.separator + configProp.getConfigValue("directory.upload.images") + File.separator + fileName);
-        try {
-            ext = Files.probeContentType(f.toPath());
-        } catch (IOException e) {
-            ext = "";
-        }
+
+        MediaType mediaType = UploadFiles.getFileImageMediaType(uploadProperies.getFiles() + File.separator + uploadProperies.getImages() + File.separator + fileName);
 
         HttpHeaders headers = new HttpHeaders();
-        if (ext.contains("jpeg")) {
-            headers.setContentType(MediaType.IMAGE_JPEG);
-        }
-        if (ext.contains("gif")) {
-            headers.setContentType( MediaType.IMAGE_GIF);
-        }
-        if (ext.contains("png")) {
-            headers.setContentType( MediaType.IMAGE_PNG);
+        if (mediaType != null) {
+            headers.setContentType(mediaType);
         }
         return new ResponseEntity<>(imageContext, headers, status);
     }
 
-    @GetMapping(value = "/videosrc", produces = "video/mp4")
+    @GetMapping(value = "/videosrc/{name}", produces = "video/mp4")
     @ResponseBody
-    public FileSystemResource videoSource(@RequestParam(value="fileName") String fileName) {
+    public FileSystemResource videoSource(@PathVariable("name") String fileName) {
         try {
-            File video = (new UploadFiles()).getVideoFile(fileName);
+            File video = (new UploadFiles(uploadProperies)).getVideoFile(fileName);
             return new FileSystemResource(video);
         } catch (UploadExceptions e){
           return null;
@@ -176,18 +145,7 @@ public class UploadContorller {
 
     @PostMapping("/deleteFile")
     @ResponseBody
-    public String deleteFile(@RequestParam("fileName") String fileName){
-        String resMessage;
-
-        UploadFiles.deleteImageFile(fileName);
-
-        JSONObject json = new JSONObject();
-        try{
-            json.put("result", true);
-            resMessage = json.toString();
-        } catch (JSONException e){
-            resMessage = "ok";
-        }
-        return resMessage;
+    public ResponseDelete deleteFile(@RequestParam("fileName") String fileName){
+        return (new UploadFiles(uploadProperies)).deleteImageFile(fileName);
     }
 }

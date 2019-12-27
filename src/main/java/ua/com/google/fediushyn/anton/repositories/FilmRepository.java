@@ -16,7 +16,7 @@ import java.util.List;
 
 public interface FilmRepository extends JpaRepository<Film, Long> {
     @Query("select f from Film f where f.id = :id_film order by f.dateUpload, f.id desc")
-    Film findFilmById(@Param("id_film") Long id);
+    Film findFilmByIdOOrderByDateUploadAndIDDesc(@Param("id_film") Long id);
 
     @Query("select f from Film f where f.name = :film_name order by f.dateUpload, f.id desc")
     Film findByName(@Param("film_name") String name);

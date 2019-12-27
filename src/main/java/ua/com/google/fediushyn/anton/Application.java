@@ -112,7 +112,7 @@ public class Application {
                 FilmQualities quality = FilmQualities.HDRIP;
                 String name = "Малыш на драйве (2017)";
                 String imagePath = "https://filmets.net/uploads/posts/2017-12/1512239538-575955256-malysh-na-drayve.jpg";
-                String pathFilm = "/videosrc?fileName=Однажды.mp4";//"http://wwww.kinogo.cc/5400f8bc4964f686997d9e4a53c233eb:2019041818/filmzzz/chelovek-pauk-li-2017_1523949622.mp4";
+                String pathFilm = "/videosrc/Однажды.mp4";//"http://wwww.kinogo.cc/5400f8bc4964f686997d9e4a53c233eb:2019041818/filmzzz/chelovek-pauk-li-2017_1523949622.mp4";
                 filmService.addFilm("Человек паук ", filmYearService.getFilmYear("2015"), filmCountryAdd,
                         notes, quality, duration, FilmTranslation.UNKNOWN, new Date(), imagePath, "", filmGenresAdd,
                         new FilmDetail(cast, director, pathFilm));

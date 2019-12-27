@@ -11,7 +11,7 @@ public interface FilmGenreService {
 
     FilmGenre getFilmGenreByCode(String genreCode);
 
-    FilmGenre getFilmGenreById(int genreId);
+    FilmGenre getFilmGenreById(Long genreId);
 
     boolean existsFilmGenre(String genre);
 

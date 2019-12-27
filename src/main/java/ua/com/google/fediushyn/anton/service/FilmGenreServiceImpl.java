@@ -30,8 +30,8 @@ public class FilmGenreServiceImpl implements FilmGenreService{
     }
 
     @Transactional(readOnly = true)
-    public FilmGenre getFilmGenreById(int genreId) {
-        return filmGenreRepository.findByID(genreId);
+    public FilmGenre getFilmGenreById(Long genreId) {
+        return filmGenreRepository.findFilmGenreById(genreId);
     }
 
     @Transactional(readOnly = true)
@@ -46,7 +46,7 @@ public class FilmGenreServiceImpl implements FilmGenreService{
 
     @Transactional(readOnly = true)
     public List<FilmGenre> getFilmGenres() {
-        return filmGenreRepository.findAll();
+        return filmGenreRepository.findAllByOrderByNameAsc();
     }
 
     @Transactional(readOnly = true)
@@ -84,6 +84,6 @@ public class FilmGenreServiceImpl implements FilmGenreService{
     @Transactional
     public void deleteFilmGenre(String genre) {
         if (!filmGenreRepository.existsByName(genre)) return;
-        filmGenreRepository.deleteByName(genre);
+        filmGenreRepository.deleteFilmGenreByName(genre);
     }
 }

@@ -1,13 +1,19 @@
 package ua.com.google.fediushyn.anton.consts;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
+@PropertySource("classpath:config.properties")
+@Configuration("UploadProperies")
 @ConfigurationProperties(prefix = "directory.upload")
-@Configuration("uploadProperties")
 public class UploadProperies {
+    @Value("images")
     private String images;
+    @Value("video")
     private String video;
+    @Value("files")
     private String files;
 
     public UploadProperies() {

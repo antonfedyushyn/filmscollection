@@ -62,8 +62,7 @@ public class FilmsController {
     String getLocaleMessage(String message, String messageDefault){
         String returnMessage;
         try {
-            Locale loc = LocaleContextHolder.getLocale();
-            returnMessage = messageSource.getMessage(message, params, loc);
+            returnMessage = messageSource.getMessage(message, params, LocaleContextHolder.getLocale());
         } catch (NoSuchMessageException e) {
             returnMessage = messageDefault;
         }
@@ -73,8 +72,7 @@ public class FilmsController {
     String getLocaleMessage(String message, String messageDefault, String fileName){
         String returnMessage;
         try {
-            Locale loc = LocaleContextHolder.getLocale();
-            returnMessage = messageSource.getMessage(message, params, loc);
+            returnMessage = messageSource.getMessage(message, params, LocaleContextHolder.getLocale());
         } catch (NoSuchMessageException e) {
             returnMessage = messageDefault;
         }

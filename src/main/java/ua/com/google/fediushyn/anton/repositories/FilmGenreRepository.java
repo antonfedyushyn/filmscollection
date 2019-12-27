@@ -1,37 +1,30 @@
 package ua.com.google.fediushyn.anton.repositories;
 
-import org.springframework.lang.NonNull;
+import org.springframework.data.jpa.repository.Query;
 import ua.com.google.fediushyn.anton.model.FilmGenre;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import javax.annotation.Nonnull;
 import java.util.List;
+import java.util.Optional;
 
 public interface FilmGenreRepository extends JpaRepository<FilmGenre, Long> {
-    @Query("select fg from FilmGenre fg where fg.name = :genre")
     FilmGenre findByName(@Param("genre") String genre);
 
-    @Query("select fg from FilmGenre fg where fg.code = :code")
     FilmGenre findByCode(@Param("code") String code);
 
-    @Query("select fg from FilmGenre fg where fg.id = :id")
-    FilmGenre findByID(@Param("id") int id);
+    @Query("select g from FilmGenre g where g.id = :id")
+    FilmGenre findFilmGenreById(@Param("id") Long id);
 
-    @Query("select case when count(fg) > 0 then true else false end from FilmGenre fg where fg.name = :genre")
     boolean existsByName(@Param("genre") String genre);
 
-    @Query("select case when count(fg) > 0 then true else false end from FilmGenre fg where fg.code = :code")
     boolean existsByCode(@Param("code") String code);
 
-    @Query("select fg from FilmGenre fg order by fg.name")
     @Nonnull
-    List<FilmGenre> findAll();
+    List<FilmGenre> findAllByOrderByNameAsc();
 
-    @Query("delete from FilmGenre fg where fg.id = :id")
     boolean deleteFilmGenreById(@Param("id") Long id);
 
-    @Query("delete from FilmGenre fg where fg.name = :genre")
-    void deleteByName(@Param("genre") String genre);
+    void deleteFilmGenreByName(@Param("genre") String genre);
 }

@@ -12,27 +12,25 @@ import org.springframework.web.multipart.MultipartFile;
 import ua.com.google.fediushyn.anton.DTO.ResponseDelete;
 import ua.com.google.fediushyn.anton.DTO.ResponseUploadFile;
 import ua.com.google.fediushyn.anton.DTO.ResponseUploadFiles;
-import ua.com.google.fediushyn.anton.consts.ConfigProperties;
-import ua.com.google.fediushyn.anton.consts.UploadProperies;
+import ua.com.google.fediushyn.anton.consts.UploadProperties;
+import ua.com.google.fediushyn.anton.consts.UploadPropertiesImpl;
 import ua.com.google.fediushyn.anton.upload.UploadExceptions;
 import ua.com.google.fediushyn.anton.upload.UploadFiles;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class UploadContorller {
     private final FilmsController filmsController;
-    private final UploadProperies uploadProperies;
+    private final UploadProperties uploadProperties;
 
     @Autowired
     UploadContorller(FilmsController filmsController,
-                     UploadProperies uploadProperies){
+                     UploadProperties uploadProperties){
         this.filmsController = filmsController;
-        this.uploadProperies = uploadProperies;
+        this.uploadProperties = uploadProperties;
     }
 
     @PostMapping("/uploadPosterFile")
@@ -45,7 +43,7 @@ public class UploadContorller {
         String filePath;
 
 
-        UploadFiles upload = new UploadFiles(uploadProperies);
+        UploadFiles upload = new UploadFiles(uploadProperties);
         try {
             fileName = upload.uploadSingleImageFile(file, true);
             result = true;
@@ -69,7 +67,7 @@ public class UploadContorller {
         List<String> filesName = null;
         List<String> filesPathes = new ArrayList<>();
 
-        UploadFiles upload = new UploadFiles(uploadProperies);
+        UploadFiles upload = new UploadFiles(uploadProperties);
         try {
             filesName = upload.uploadMultiImageFiles(file);
             result = true;
@@ -79,10 +77,14 @@ public class UploadContorller {
             resMessage = filmsController.getLocaleMessage(e.getMessage(), e.getDefaultMessage(), e.getFileName());
         }
 
-        if (!filesName.isEmpty()) {
-            for (String filePath : filesName) {
-                filesPathes.add("/imageFile/" + filePath);
+        try {
+            if ((result) && (!filesName.isEmpty())) {
+                for (String filePath : filesName) {
+                    filesPathes.add("/imageFile/" + filePath);
+                }
             }
+        } catch (NullPointerException e) {
+            result = false;
         }
 
         return new ResponseUploadFiles(result, resMessage, String.join(",", filesPathes), file.length);
@@ -97,7 +99,7 @@ public class UploadContorller {
         String fileName = "";
         String pathFile;
 
-        UploadFiles upload = new UploadFiles(uploadProperies);
+        UploadFiles upload = new UploadFiles(uploadProperties);
         try {
             fileName = upload.uploadVideoFile(file);
             result = true;
@@ -116,14 +118,14 @@ public class UploadContorller {
     public ResponseEntity<byte[]> getImageFile(@PathVariable("name") String fileName) {
         byte[] imageContext = null;
         HttpStatus status = HttpStatus.OK;
-        UploadFiles uploadFiles = new UploadFiles(uploadProperies);
+        UploadFiles uploadFiles = new UploadFiles(uploadProperties);
         try{
             imageContext = uploadFiles.getImageFile(fileName);
         } catch (UploadExceptions e){
             status = HttpStatus.INTERNAL_SERVER_ERROR;
         }
 
-        MediaType mediaType = UploadFiles.getFileImageMediaType(uploadProperies.getFiles() + File.separator + uploadProperies.getImages() + File.separator + fileName);
+        MediaType mediaType = UploadFiles.getFileImageMediaType(uploadProperties.getPathFiles() + File.separator + uploadProperties.getPathImages() + File.separator + fileName);
 
         HttpHeaders headers = new HttpHeaders();
         if (mediaType != null) {
@@ -136,7 +138,7 @@ public class UploadContorller {
     @ResponseBody
     public FileSystemResource videoSource(@PathVariable("name") String fileName) {
         try {
-            File video = (new UploadFiles(uploadProperies)).getVideoFile(fileName);
+            File video = (new UploadFiles(uploadProperties)).getVideoFile(fileName);
             return new FileSystemResource(video);
         } catch (UploadExceptions e){
           return null;
@@ -146,6 +148,6 @@ public class UploadContorller {
     @PostMapping("/deleteFile")
     @ResponseBody
     public ResponseDelete deleteFile(@RequestParam("fileName") String fileName){
-        return (new UploadFiles(uploadProperies)).deleteImageFile(fileName);
+        return (new UploadFiles(uploadProperties)).deleteImageFile(fileName);
     }
 }

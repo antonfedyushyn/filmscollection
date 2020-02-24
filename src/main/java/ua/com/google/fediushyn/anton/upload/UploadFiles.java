@@ -4,8 +4,7 @@ import org.apache.commons.io.FilenameUtils;
 import org.springframework.http.MediaType;
 import org.springframework.web.multipart.MultipartFile;
 import ua.com.google.fediushyn.anton.DTO.ResponseDelete;
-import ua.com.google.fediushyn.anton.consts.ConfigProperties;
-import ua.com.google.fediushyn.anton.consts.UploadProperies;
+import ua.com.google.fediushyn.anton.consts.UploadProperties;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -21,15 +20,10 @@ public class UploadFiles implements UploadFile {
     private final static String FMT_IMAGE_NAME_ARR = "image_%d_%s.%s";
     private final static String FMT_POSTER_NAME = "poster_%s.%s";
 
-    //private final ConfigProperties configProperties;
-    private final UploadProperies uploadProperies;
+    private final UploadProperties uploadProperties;
 
-    /*public UploadFiles(ConfigProperties configProperties) {
-        this.configProperties = configProperties;
-    }*/
-
-    public UploadFiles(UploadProperies uploadProperies) {
-        this.uploadProperies = uploadProperies;
+    public UploadFiles(UploadProperties uploadProperties) {
+        this.uploadProperties = uploadProperties;
     }
 
     public static MediaType getFileImageMediaType(String filePath){
@@ -78,8 +72,7 @@ public class UploadFiles implements UploadFile {
                         FilenameUtils.getExtension(file.getOriginalFilename()));
             }
 
-            //File dir = new File(configProperties.getConfigValue("directory.upload.files") + File.separator + configProperties.getConfigValue("directory.upload.images"));
-            File dir = new File(uploadProperies.getFiles() + File.separator + uploadProperies.getImages());
+            File dir = new File(uploadProperties.getPathFiles() + File.separator + uploadProperties.getPathImages());
 
             if (!dir.exists()){
                 if (!dir.mkdirs()) {
@@ -120,8 +113,7 @@ public class UploadFiles implements UploadFile {
                 String fileName = String.format(FMT_IMAGE_NAME_ARR, pos++, new SimpleDateFormat("yyyymmddhhmmss").format(new Date()),
                         FilenameUtils.getExtension(file.getOriginalFilename()));
 
-                //File dir = new File(configProperties.getConfigValue("directory.upload.files") + File.separator + configProperties.getConfigValue("directory.upload.images"));
-                File dir = new File(uploadProperies.getFiles() + File.separator + uploadProperies.getImages());
+                File dir = new File(uploadProperties.getPathFiles() + File.separator + uploadProperties.getPathImages());
 
                 if (!dir.exists()) {
                     if (!dir.mkdirs()) {
@@ -153,8 +145,7 @@ public class UploadFiles implements UploadFile {
             fileName = UUID.randomUUID().toString()+"."+FilenameUtils.getExtension(file.getOriginalFilename());
 
 
-            //File dir = new File(configProperties.getConfigValue("directory.upload.files") + File.separator + configProperties.getConfigValue("directory.upload.video"));
-            File dir = new File(uploadProperies.getFiles() + File.separator + uploadProperies.getVideo());
+            File dir = new File(uploadProperties.getPathFiles() + File.separator + uploadProperties.getPathVideos());
 
             if (!dir.exists()){
                 if (!dir.mkdirs()) {
@@ -176,8 +167,7 @@ public class UploadFiles implements UploadFile {
 
     public byte[] getImageFile(String fileName) throws UploadExceptions{
         byte[] imageContext;
-        //File dir = new File(configProperties.getConfigValue("directory.upload.files") + File.separator + configProperties.getConfigValue("directory.upload.images"));
-        File dir = new File(uploadProperies.getFiles() + File.separator + uploadProperies.getImages());
+        File dir = new File(uploadProperties.getPathFiles() + File.separator + uploadProperties.getPathImages());
         if (!dir.exists()) {
             throw new UploadExceptions("Directory.images.not.exists", "Images directory not found!");
         }
@@ -196,8 +186,7 @@ public class UploadFiles implements UploadFile {
 
     public File getVideoFile(String fileName) throws UploadExceptions{
         File video;
-        //File dir = new File(configProperties.getConfigValue("directory.upload.files") + File.separator + configProperties.getConfigValue("directory.upload.video"));
-        File dir = new File(uploadProperies.getFiles() + File.separator + uploadProperies.getVideo());
+        File dir = new File(uploadProperties.getPathFiles() + File.separator + uploadProperties.getPathImages());
         if (!dir.exists()) {
             throw new UploadExceptions("Directory.videos.not.exists", "Videos directory not found!");
         }
@@ -210,8 +199,7 @@ public class UploadFiles implements UploadFile {
 
     public byte[] getVideoContext(String fileName) throws UploadExceptions{
         byte[] videoContext;
-        //File dir = new File(configProperties.getConfigValue("directory.upload.files") + File.separator + configProperties.getConfigValue("directory.upload.video"));
-        File dir = new File(uploadProperies.getFiles() + File.separator + uploadProperies.getVideo());
+        File dir = new File(uploadProperties.getPathFiles() + File.separator + uploadProperties.getPathVideos());
         if (!dir.exists()) {
             throw new UploadExceptions("Directory.videos.not.exists", "Videos directory not found!");
         }
@@ -230,8 +218,7 @@ public class UploadFiles implements UploadFile {
     }
 
     public ResponseDelete deleteImageFile(String fileName){
-        //File dir = new File(configProperties.getConfigValue("directory.upload.files") + File.separator + configProperties.getConfigValue("directory.upload.images"));
-        File dir = new File(uploadProperies.getFiles() + File.separator + uploadProperies.getImages());
+        File dir = new File(uploadProperties.getPathFiles() + File.separator + uploadProperties.getPathImages());
         if (!dir.exists()) {
             return new ResponseDelete(true);
         }
@@ -245,8 +232,7 @@ public class UploadFiles implements UploadFile {
     }
 
     public ResponseDelete deleteVideoFile(String fileName){
-        //File dir = new File(configProperties.getConfigValue("directory.upload.files") + File.separator + configProperties.getConfigValue("directory.upload.video"));
-        File dir = new File(uploadProperies.getFiles() + File.separator + uploadProperies.getVideo());
+        File dir = new File(uploadProperties.getPathFiles() + File.separator + uploadProperties.getPathVideos());
         if (!dir.exists()) {
             return new ResponseDelete(true);
         }

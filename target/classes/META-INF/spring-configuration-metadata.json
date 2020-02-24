@@ -2,25 +2,25 @@
   "groups": [
     {
       "name": "directory.upload",
-      "type": "ua.com.google.fediushyn.anton.consts.UploadProperies",
-      "sourceType": "ua.com.google.fediushyn.anton.consts.UploadProperies"
+      "type": "ua.com.google.fediushyn.anton.consts.UploadPropertiesImpl",
+      "sourceType": "ua.com.google.fediushyn.anton.consts.UploadPropertiesImpl"
     }
   ],
   "properties": [
     {
-      "name": "directory.upload.files",
+      "name": "directory.upload.path-files",
       "type": "java.lang.String",
-      "sourceType": "ua.com.google.fediushyn.anton.consts.UploadProperies"
+      "sourceType": "ua.com.google.fediushyn.anton.consts.UploadPropertiesImpl"
     },
     {
-      "name": "directory.upload.images",
+      "name": "directory.upload.path-images",
       "type": "java.lang.String",
-      "sourceType": "ua.com.google.fediushyn.anton.consts.UploadProperies"
+      "sourceType": "ua.com.google.fediushyn.anton.consts.UploadPropertiesImpl"
     },
     {
-      "name": "directory.upload.video",
+      "name": "directory.upload.path-videos",
       "type": "java.lang.String",
-      "sourceType": "ua.com.google.fediushyn.anton.consts.UploadProperies"
+      "sourceType": "ua.com.google.fediushyn.anton.consts.UploadPropertiesImpl"
     }
   ],
   "hints": []

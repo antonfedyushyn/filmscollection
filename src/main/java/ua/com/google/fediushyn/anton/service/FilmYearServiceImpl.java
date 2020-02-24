@@ -31,7 +31,7 @@ public class FilmYearServiceImpl implements FilmYearService {
 
     @Transactional(readOnly = true)
     public List<FilmYear> getFilmYears() {
-        return filmYearRepository.findAll();
+        return filmYearRepository.findAllByOrderByNameAsc();
     }
 
     @Transactional(readOnly = true)

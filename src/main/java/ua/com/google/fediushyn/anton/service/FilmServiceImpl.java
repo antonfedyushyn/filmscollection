@@ -34,7 +34,7 @@ public class FilmServiceImpl implements FilmService{
 
     @Transactional(readOnly = true)
     public Film getFilmByID(Long idFilm) {
-        return filmRepository.findFilmByIdOOrderByDateUploadAndIDDesc(idFilm);
+        return filmRepository.findFilmById(idFilm);
     }
 
     @Transactional(readOnly = true)
@@ -49,12 +49,12 @@ public class FilmServiceImpl implements FilmService{
 
     @Transactional(readOnly = true)
     public Page<Film> getAllFilms(Pageable pageable) {
-        return filmRepository.findAllFilms(pageable);
+        return filmRepository.findAllByOrderByDateUploadDesc(pageable);
     }
 
     @Transactional(readOnly = true)
     public Page<Film> getFilmsByName(String text, Pageable pageable){
-        return filmRepository.findByName(text, pageable);
+        return filmRepository.findByNameOrderByDateUploadDesc(text, pageable);
     }
 
     @Transactional(readOnly = true)
@@ -103,6 +103,6 @@ public class FilmServiceImpl implements FilmService{
         if (!filmRepository.existsById(filmID)) {
             throw new FilmException("Films.not.found", "Movies not found!");
         }
-        filmRepository.deleteById(filmID);
+        filmRepository.deleteFilmById(filmID);
     }
 }
